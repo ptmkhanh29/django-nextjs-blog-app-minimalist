@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 10px 0 10px 0;
+	font-family: var(--font-header);
+    font-weight: bold;
+}
+
+.logo a {
+    color: #39ff14; /* Màu xanh lá cho logo */
+    font-weight: bold;
+    font-weight: bold;
+}
+
+.menu a {
+    color: var(--header-menu-tag);
+    margin-left: 20px;
+    text-decoration: none;
+	font-family: var(--font-header);
+    font-weight: bold;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
