@@ -7,6 +7,9 @@
 	font-family: var(--font-header);
     font-weight: bold;
 }
+.navbar a.active {
+    text-decoration: underline; 
+}
 
 .logo a {
     color: #39ff14; /* Màu xanh lá cho logo */
@@ -16,12 +19,19 @@
 
 .menu a {
     color: var(--header-menu-tag);
-    margin-left: 20px;
+    margin-left: 12px;
     text-decoration: none;
 	font-family: var(--font-header);
     font-weight: bold;
 }
 
-.menu a:hover {
+.menu a:hover, .menu a:active {
     text-decoration: underline;
+}
+
+.themeToggle {
+  cursor: pointer; /* Ensures the toggle is clickable */
+  padding-left: 12px; /* Adds padding for better interaction */
+  padding-right: 0;
+  display: inline-block; /* Makes div inline for better layout */
 }

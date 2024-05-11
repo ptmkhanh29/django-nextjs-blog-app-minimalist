@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { Post } from '../components/Post';
+import { Sidebar } from '../components/Sidebar';
 import { Main } from '../layouts/Main';
 
 export default function Home() {

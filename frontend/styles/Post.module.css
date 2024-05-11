@@ -1,19 +1,39 @@
 /* Post Styles */
-.postcontainer {
-    color: var(--site-subtitle-color);
+.postContainer {
+    color: var(--post-container-color);
     padding: 0;
     font-family: var(--font-header);
 }
 
-.headertitle {
+.headerTitle {
     font-size: 32px; /* tương đương text-4xl */
 }
 
-.subheader {
-    color: red; /* tương đương text-gray-500 */
-    padding: 16px 0;
-    border-bottom: 1px solid #4b5563; /* tương đương border-gray-700 */
+.subHeader {
+    color: var(--post-container-color);
+    padding: 5px 0;
+    font-family: 'Roboto Mono', monospace;
 }
+.boldText {
+    font-weight: bold;
+    color: black;
+    text-decoration: underline;
+}
+
+.link {
+    text-decoration: underline; /* Continues to underline the text */
+    color: #39ff14; /* Keeps the link blue */
+    cursor: pointer; /* Indicates it's clickable */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    font-weight: bold;
+}
+
+.link:hover {
+    
+    text-decoration: underline; /* Removes underline on hover */
+    color: darkgreen; /* Darkens the color on hover */
+}
+
 /* Categories Styles */
 .categories {
     display: flex;
@@ -62,6 +82,16 @@
     margin-top: 40px;
 }
 
+.blogHeader {
+    font-size: 24px; /* Adjust size as needed */
+    color: black; /* Use a variable or specific color */
+    padding-top: 0;
+    margin-bottom: 20px; /* Space between header and post list */
+    padding-left: 0; /* Alignment with posts if necessary */
+    font-family: var(--font-intro-section-post-list);
+    letter-spacing: 0px;
+}
+
 .postCard {
     display: flex;
     flex-direction: row-reverse;  /* Đảo ngược thứ tự để ảnh nằm bên phải */
@@ -99,6 +129,7 @@
     font-weight: bold;
     font-family: var(--font-header);
     font-size: 1.1rem;
+    color: var(--post-list-title);
 }
 .postMeta {
     display: flex;

@@ -46,9 +46,11 @@ export const Post = () => {
 
   return (
     <>
-      <div className={styles.postcontainer}>    {/* Categories container */}
-        <div className={styles.subheader}>
-          My blog
+      <div className={styles.postContainer}>
+        <div className={styles.postContainer}>
+            <div className={styles.subHeader}>
+                <span className={styles.boldText}>##</span> Một ngày đẹp trời thế là chiếc blog này được <a href="https://github.com/ptmkhanh29/django-nextjs-blog-app-minimalist" className={styles.link} target="_blank" rel="noopener noreferrer">build</a>
+            </div>
         </div>
         <div className={styles.categories}>
           {categoriesWithColors.map((category, index) => (
@@ -60,6 +62,9 @@ export const Post = () => {
       </div>
 
       <div className={styles.postList}>        {/* postList container */}
+          <div className={styles.blogHeader}>
+            📍featured blog
+          </div>
           {posts.map((post) => (
               <Link href={`/post/${post.slug}`} passHref key={post.slug}>
                   <div className={styles.postCard}>

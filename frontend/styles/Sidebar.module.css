@@ -1,0 +1,72 @@
+/* styles/Sidebar.module.css */
+.sidebarContainer {
+    position: fixed; /* Fixed position to stay on the left */
+    width: 350px; /* Fixed width */
+    height: 100vh; /* Full height */
+    background-color: var(--bg-color); /* Background color similar to bg-slate-900 */
+    padding-left: 100px; /* Padding around the content */
+    padding-top: 50px;
+    box-sizing: border-box;
+    transition: width 0.3s ease; /* Smooth transition for width changes */
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.profileName {
+    color: var(--profile-name-sidebar);
+    margin: 20px 0 10px 0;
+    font-size: 32px; /* Font size */
+    font-weight: bold; /* Bold font weight */
+    font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+}
+
+.profileName:hover {
+    color: #000000; /* Dark gray hover color, adjust as needed */
+}
+.profile p {
+  color: #000000; /* Light grey color, adjust as needed */
+  margin: 0 0 20px 0; /* Space above and below */
+  font-size: 15px; /* Font size */
+  font-family: var(--font-sidebar);
+}
+
+.avatar {
+    border-radius: 50%; /* Makes the image round */
+}
+
+.location {
+    display: flex; /* Establishes a flex container */
+    align-items: center; /* Vertically centers the items in the container */
+    gap: 2px; /* Adds space between the icon and the text */
+    padding: 0; /* Resets padding */
+    margin: 0; /* Resets margin */
+    padding-bottom: 10px;
+}
+.iconLocation {
+    width: 25px; /* Adjust width as needed */
+    height: 25px; /* Adjust height as needed */
+}
+
+.iconSocial {
+    display: flex; /* Establishes a flex container */
+    align-items: center; /* Vertically centers the items in the container */
+    gap: 2px; /* Adds space between the icon and the text */
+    padding: 0; /* Resets padding */
+    margin: 0; /* Resets margin */
+    padding-bottom: 10px;
+}
+
+.iconSocial img {
+    width: 25px; /* Adjust width as needed */
+    height: 25px; /* Adjust height as needed */
+}
+
+@media (max-width: 768px) {
+    .sidebarContainer {
+        display: none; /* Hides the sidebar on screens smaller than 1440px */
+    }
+}
+

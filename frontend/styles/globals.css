@@ -4,39 +4,70 @@
 
 /* Globals.css */
 :root {
-  --bg-color: #ffffff; 			/* Màu cho chế độ sáng */
-  --primary-font-color: #000; 	/* Thêm biến màu chữ */
-	--header-title-color: #505050; 	/* Màu cho tên blog Khanh Phan ở header */
-	--site-title-color: rgb(113, 113, 113);
-	--sidebar-active-color: #1d1d1d;
-	--site-subtitle-color: #717171;
-	--line-sidebar-color: #CCCCCC;
-	--header-menu-tag: #000000;
-	--header-menu-tag-active: #000000;
-	--font-header: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-	--content-body-color: #F9FAFB;
+  --bg-color: #ffffff;  
+ 
+ /* Color for Header menu tag: Home, Blog, About,... */
+  --header-menu-tag: #000000;
+  --header-menu-tag-active: #000000;
+  --font-header: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+
+  /* Color for post list */
+  --font-intro-section-post-list: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   --post-list-title: #000000;
-  --heading-color: #2a2a2a;
-  --text-muted-color: #757575;
+  --post-container-color: #717171;
+
+  /* Sidebar */
+  --font-sidebar: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  --profile-name-sidebar: #717171;
 }
+
+/*
+.lightMode {
+  --bg-color: #ffffff;  
+ 
+  --header-menu-tag: #000000;
+  --header-menu-tag-active: #000000;
+  --font-header: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+
+  --post-list-title: #000000;
+  --post-container-color: #717171;
+
+  --bg-color: rgb(27, 27, 30);                
+
+  --header-color: ;
+  --header-menu-tag: #ffffff;
+  --header-menu-tag-active: #ffffff;
+  --font-header: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+
+  --post-container-color: #717171;
+  --post-list-title: #464d51;
+} */
 
 .main-container {
-  background-color: var(--bg-color); /* Màu tương đương với bg-slate-900 trong Tailwind */
-  min-height: 100vh; 				/* min-h-screen trong Tailwind */
+    width: 750px;                  /* Chiều rộng cố định là 700px */
+    background-color: var(--bg-color); /* Màu tương đương với bg-slate-900 trong Tailwind */
+    min-height: 100vh;             /* min-h-screen trong Tailwind */
+    margin-left: auto;             /* Canh giữa container */
+    margin-right: auto;            /* Canh giữa container */
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-.container {
-  width: 100%; 						/* Đảm bảo container chiếm toàn bộ chiều rộng của phần tử cha */
-  padding-left: 16px; 				/* px-4 trong Tailwind */
-  padding-right: 16px; 				/* px-4 trong Tailwind */
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
+.container {                 /* Đảm bảo container chiếm toàn bộ chiều rộng của phần tử cha */
+    padding-left: 10px;            /* Padding cho phiên bản nhỏ hơn 1024px */
+    padding-right: 10px;           /* Padding cho phiên bản nhỏ hơn 1024px */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
 
-@media (min-width: 1024px) { 		/* lg: breakpoint trong Tailwind */
-  .container {
-    padding-left: 224px; 			/* lg:px-56 trong Tailwind */
-    padding-right: 224px; 			/* lg:px-56 trong Tailwind */
-  }
+/* min-width nghĩa là Nếu màn hình lớn hơn 1024px thì mới pading left và right lùi vào 224px*/
+@media (max-width: 768px) {
+    .main-container {
+        width: 95vw;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
+
+
