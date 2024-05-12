@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     color: white;
-    padding: 10px 0 10px 0;
+    padding: 0 0 10px 0;
 	font-family: var(--font-header);
     font-weight: bold;
 }
@@ -34,4 +34,73 @@
   padding-left: 12px; /* Adds padding for better interaction */
   padding-right: 0;
   display: inline-block; /* Makes div inline for better layout */
+}
+.postContainer {
+    color: var(--post-container-color);
+    padding: 0;
+    font-family: var(--font-header);
+}
+
+.subHeader {
+    color: var(--post-container-color);
+    padding: 5px 0;
+    font-family: 'Roboto Mono', monospace;
+}
+.boldText {
+    font-weight: bold;
+    color: black;
+    text-decoration: underline;
+}
+
+.link {
+    text-decoration: underline; /* Continues to underline the text */
+    color: #39ff14; /* Keeps the link blue */
+    cursor: pointer; /* Indicates it's clickable */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    font-weight: bold;
+}
+
+.link:hover {
+    
+    text-decoration: underline; /* Removes underline on hover */
+    color: darkgreen; /* Darkens the color on hover */
+}
+/* Categories Styles */
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.category {
+    display: inline-block;
+    padding: 4px 8px;          /* Điều chỉnh khung bao Category */
+    padding-left: 20px;
+    background-color: #f5f5f5;
+    border-radius: 15px;        /* Điều chỉnh khung bao Category */
+    font-size: 12px;            /* Điều chỉnh chữ trong khung bao Category */
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    margin-right: 6px;
+    transition: background-color 0.3s;
+}
+
+.category::before {
+    content: '';
+    width: 6px;     /* Điều chỉnh kích thước của dấu chấm tròn */
+    height: 6px;   /* Điều chỉnh kích thước của dấu chấm tròn */
+    background-color: var(--color); /* Sử dụng biến CSS cho màu sắc */
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.category:hover {
+    background-color: #e0e0e0; /* Màu khi hover */
 }

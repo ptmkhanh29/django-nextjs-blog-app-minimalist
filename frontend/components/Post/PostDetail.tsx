@@ -9,13 +9,15 @@ export const PostDetail = ({ post }: PostDetailType) => {
   return (
     <>
       <Main>
-        <div className="flex justify-center text-gray-500">
+        <div>
           {moment(post.created_at).format('DD-MM-YYYY')}
         </div>
-        <div className="text-white flex justify-center text-4xl py-4">
+        <div>
           {post.title}
         </div>
-        <div className="text-gray-400">{post.content}</div>
+        <div>
+          {post.content}
+        </div>
       </Main>
     </>
   );

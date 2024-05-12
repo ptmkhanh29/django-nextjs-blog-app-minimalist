@@ -1,0 +1,25 @@
+/* Date container styles */
+.postDetailContainer {
+    color: var(--post-container-color);
+    font-family: var(--font-header);
+}
+.dateContainer {
+  display: flex;
+  justify-content: center;
+  color: #4B5563; /* gray-500 */
+}
+
+/* Title container styles */
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  color: #FFFFFF; /* white */
+  font-size: 2.25rem; /* text-4xl */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Content container styles */
+.contentContainer {
+  color: #9CA3AF; /* gray-400 */
+}

@@ -74,7 +74,7 @@
     min-height: 100vh;
     background-color: var(--bg-color);
     box-sizing: border-box;
-    min-width: 100%;
+    width: 100%;
     overflow-x: hidden; /* Ngăn chặn thanh cuộn ngang */
 }
 
@@ -88,7 +88,9 @@
 .main-content {
     width: 55%; /* Nội dung chính chiếm 50% chiều rộng màn hình */
     box-sizing: border-box;
-    padding: 0 20px 20px 20px;
+    padding: 10px 20px 20px 20px;
+    overflow: hidden;
+    align-items: stretch;
 }
 
 .panels {

@@ -9,7 +9,8 @@ export const Sidebar = () => {
           <div className={styles.profile}>
             <img src="/profile.jpg" alt="Avatar" width={110} height={110} className={styles.avatar}/>
             <Link legacyBehavior href="/"><a className={styles.profileName}>Khanh Phan</a></Link>
-            <p>Software Engineer - Passionate about embedded, linux and devops</p>
+            <p>Software Engineer</p>
+            <p>Passionate about embedded, linux and devops</p>
             
             <div className={styles.location}>
                 <img src="/assets/icons/location-icon.svg" alt="LinkedIn" className={styles.iconLocation} />

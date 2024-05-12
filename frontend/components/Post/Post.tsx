@@ -7,34 +7,10 @@ import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
 
-const colors = [
-  '#33FF57', '#FF5733', '#33C1FF', '#FF33BF', '#8C33FF', '#FFD433', '#FF8E33', '#B8B8B8', '#FFC300', '#581845'
-];
-
-const url_categories = 'http://127.0.0.1:3001/categories';
 const url_post_list = 'http://127.0.0.1:3001/posts';
 
-function getNextColor() {
-  const color = colors.shift();
-  colors.push(color);
-  return color;
-}
-
 export const Post = () => {
-  const [categoriesWithColors, setCategoriesWithColors] = useState([]);
   const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    axios.get(url_categories)
-      .then(response => {
-        const fetchedCategories = response.data.map(category => ({
-          name: category.name,
-          color: getNextColor()
-        }));
-        setCategoriesWithColors(fetchedCategories);
-      })
-      .catch(error => console.error('Error fetching categories:', error));
-  }, []);
 
   useEffect(() => {
     axios.get(url_post_list)
@@ -46,21 +22,6 @@ export const Post = () => {
 
   return (
     <>
-      <div className={styles.postContainer}>
-        <div className={styles.postContainer}>
-            <div className={styles.subHeader}>
-                <span className={styles.boldText}>##</span> Một ngày đẹp trời thế là chiếc blog này được <a href="https://github.com/ptmkhanh29/django-nextjs-blog-app-minimalist" className={styles.link} target="_blank" rel="noopener noreferrer">build</a>
-            </div>
-        </div>
-        <div className={styles.categories}>
-          {categoriesWithColors.map((category, index) => (
-            <Link key={index} href={`/category/${category.name.toLowerCase()}`} className={styles.category} style={{ '--color': category.color }}>
-              {category.name}
-            </Link>
-          ))}
-        </div>
-      </div>
-
       <div className={styles.postList}>        {/* postList container */}
           <div className={styles.blogHeader}>
             📍featured blog
