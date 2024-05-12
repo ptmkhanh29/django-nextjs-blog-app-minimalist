@@ -45,7 +45,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="flex justify-center">
-          TUONGHO • © 2023 • Next.js Starter Blog
+          KHANHPHAN • © 2024 • Next.js Django Blog
         </div>
       </footer>
     </>

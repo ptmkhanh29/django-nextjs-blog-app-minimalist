@@ -1,11 +1,12 @@
 /* styles/Sidebar.module.css */
 .sidebarContainer {
     position: fixed; /* Fixed position to stay on the left */
-    width: 350px; /* Fixed width */
+    width: 25%;
     height: 100vh; /* Full height */
     background-color: var(--bg-color); /* Background color similar to bg-slate-900 */
-    padding-left: 100px; /* Padding around the content */
-    padding-top: 50px;
+    padding-left: 70px; /* Padding around the content */
+    padding-top: 30px;
+    padding-right: 20px;
     box-sizing: border-box;
     transition: width 0.3s ease; /* Smooth transition for width changes */
 }
@@ -31,10 +32,19 @@
   margin: 0 0 20px 0; /* Space above and below */
   font-size: 15px; /* Font size */
   font-family: var(--font-sidebar);
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
 .avatar {
     border-radius: 50%; /* Makes the image round */
+    box-shadow: 0 0 0 4px #D9D9D9; /* Tạo viền trắng ngoài, thay đổi màu nếu cần */
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo mó khi thay đổi kích thước */
+}
+
+.avatar:hover {
+    transform: scale(1.05); /* Phóng to ảnh lên 1.05 lần khi hover */
 }
 
 .location {
@@ -62,11 +72,5 @@
 .iconSocial img {
     width: 25px; /* Adjust width as needed */
     height: 25px; /* Adjust height as needed */
-}
-
-@media (max-width: 768px) {
-    .sidebarContainer {
-        display: none; /* Hides the sidebar on screens smaller than 1440px */
-    }
 }
 

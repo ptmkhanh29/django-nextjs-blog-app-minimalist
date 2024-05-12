@@ -41,32 +41,71 @@
 
   --post-container-color: #717171;
   --post-list-title: #464d51;
-} */
+} 
 
 .main-container {
-    width: 750px;                  /* Chiều rộng cố định là 700px */
-    background-color: var(--bg-color); /* Màu tương đương với bg-slate-900 trong Tailwind */
-    min-height: 100vh;             /* min-h-screen trong Tailwind */
-    margin-left: auto;             /* Canh giữa container */
-    margin-right: auto;            /* Canh giữa container */
+    width: 750px;                 
+    background-color: var(--bg-color); 
+    min-height: 100vh;             
+    margin-left: auto;             
+    margin-right: auto;            
     box-sizing: border-box;
     overflow-x: hidden;
 }
 
-.container {                 /* Đảm bảo container chiếm toàn bộ chiều rộng của phần tử cha */
-    padding-left: 10px;            /* Padding cho phiên bản nhỏ hơn 1024px */
-    padding-right: 10px;           /* Padding cho phiên bản nhỏ hơn 1024px */
+.container {                 
+    padding-left: 10px;            
+    padding-right: 10px;           
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
 }
 
-/* min-width nghĩa là Nếu màn hình lớn hơn 1024px thì mới pading left và right lùi vào 224px*/
 @media (max-width: 768px) {
     .main-container {
         width: 95vw;
         padding-left: 0px;
         padding-right: 0px;
+    }
+} */
+
+.main-container {
+    display: flex; /* Sử dụng flexbox để quản lý layout */
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    box-sizing: border-box;
+    min-width: 100%;
+    overflow-x: hidden; /* Ngăn chặn thanh cuộn ngang */
+}
+
+.sidebar {
+    width: 25%; /* Sidebar chiếm 25% chiều rộng màn hình */
+    box-sizing: border-box; /* Đảm bảo rằng padding và border không làm tăng chiều rộng */
+    padding: 20px; /* Ví dụ padding */
+    overflow: hidden;
+}
+
+.main-content {
+    width: 55%; /* Nội dung chính chiếm 50% chiều rộng màn hình */
+    box-sizing: border-box;
+    padding: 0 20px 20px 20px;
+}
+
+.panels {
+    width: 20%; /* Phần tag chiếm 25% chiều rộng màn hình */
+    background-color: #ccc; /* Màu nền cho tags */
+}
+
+/* Media Queries cho các màn hình nhỏ hơn 1024px */
+@media (max-width: 1024px) {
+    .sidebar,
+    .panels {
+        display: none; /* Ẩn sidebar và panels trên thiết bị nhỏ */
+    }
+    
+    .main-content {
+        width: 100%; /* Cho main-content chiếm 100% chiều rộng màn hình */
+        padding: 20px;
     }
 }
 

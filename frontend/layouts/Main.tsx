@@ -10,9 +10,11 @@ type IMainProps = {
 
 const Main = (props: IMainProps) => (
   <>
-    <Sidebar />
     <main class="main-container">
-      <div class="container">
+      <div class="sidebar">
+        <Sidebar />
+      </div>
+      <div class="main-content">
         <Header blogName={'>$home/khanhphan'} />
         <>{props.children}</>
         <Footer />

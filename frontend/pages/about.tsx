@@ -5,7 +5,7 @@ import { Post } from '../components/Post';
 import { Sidebar } from '../components/Sidebar';
 import { Main } from '../layouts/Main';
 
-export default function Home() {
+export default function About() {
   return (
     <>
       <Head>
@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/assets/icons/ubuntu-icon.svg" />
       </Head>
       <Main>
-        <Post />
+        <p>This is the About page</p>
       </Main>
     </>
   );

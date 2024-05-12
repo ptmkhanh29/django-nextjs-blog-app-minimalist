@@ -3,32 +3,7 @@ import { useRouter } from 'next/router'; // Import useRouter
 import styles from '../../styles/Sidebar.module.css'; // Ensure the path is correct
 import { useState, useEffect } from 'react';
 
-const useViewportWidth = () => {
-    const [width, setWidth] = useState(0);
-
-    useEffect(() => {
-        // Cập nhật kích thước ban đầu
-        setWidth(window.innerWidth);
-
-        // Hàm cập nhật kích thước khi cửa sổ thay đổi
-        function handleResize() {
-            setWidth(window.innerWidth);
-        }
-
-        // Thêm event listener
-        window.addEventListener('resize', handleResize);
-
-        // Dọn dẹp khi component unmount
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    return width;
-};
-
 export const Sidebar = () => {
-    const width = useViewportWidth();
     return (
         <div className={styles.sidebarContainer}>
           <div className={styles.profile}>
@@ -71,7 +46,6 @@ export const Sidebar = () => {
                     <span style={{ textDecoration: 'underline' }}> Email for me</span>
                 </a>
             </Link>
-            <p>Chiều rộng hiện tại của viewport: {width}px</p>
           </div>
         </div>
     );
