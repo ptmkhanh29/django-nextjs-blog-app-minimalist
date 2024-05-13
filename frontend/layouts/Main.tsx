@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { Sidebar } from '../components/Sidebar';
+import { Panel } from '../components/Panel';
 
 type IMainProps = {
   children: ReactNode;
@@ -10,15 +11,24 @@ type IMainProps = {
 
 const Main = (props: IMainProps) => (
   <>
-    <main class="main-container">
-      <div class="sidebar">
-        <Sidebar />
-      </div>
-      <div class="main-content">
+    <main class="body-container">
+      <div class="header">
         <Header blogName={'>$home/khanhphan'} />
-        <>{props.children}</>
-        <Footer />
       </div>
+
+      <div class="main-container">
+        <div class="sidebar">
+          <Sidebar />
+        </div>
+        <div class="main-content">
+          <>{props.children}</>
+          <Footer />
+        </div>
+        <div class="panel">
+          <Panel />
+        </div>
+      </div>
+
     </main>
   </>
 );

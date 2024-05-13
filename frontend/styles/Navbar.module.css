@@ -1,9 +1,21 @@
+.headerContainer {
+    width: 100%; /* Chiếm 55% chiều rộng của .header */
+    padding-right: 50px;
+    padding-top: 10px;
+
+}
+@media (max-width: 1024px) {
+    .headerContainer {
+        width: 100%; /* Cho main-content chiếm 100% chiều rộng màn hình */
+        padding: 5px 20px 0 20px;
+    }
+}
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     color: white;
-    padding: 0 0 10px 0;
+    padding: 0;
 	font-family: var(--font-header);
     font-weight: bold;
 }
@@ -43,7 +55,7 @@
 
 .subHeader {
     color: var(--post-container-color);
-    padding: 5px 0;
+    padding: 0;
     font-family: 'Roboto Mono', monospace;
 }
 .boldText {

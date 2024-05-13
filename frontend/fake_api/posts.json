@@ -30,7 +30,7 @@
     "content": "Khi nhìn vào một website, bạn thấy điều gì thu hút bạn nhất? Phông chữ của website, giao diện người dùng hay những thiết kế? Hầu hết người dùng thích một website có giao diện người dùng thân thiện và dễ sử dụng, đó là nơi React xuất hiện.\n\nReactJS đã nổi lên như một trong những thư viện lớn nhất được các nhà phát triển và doanh nghiệp sử dụng trong vài năm qua. Trong bài viết này, chúng ta sẽ cùng tìm hiểu về những lý do vì sao ReactJS được xem là ngôn ngữ lập trình mà các developer nên lựa chọn trong tương lai.",
     "image": "post3.png",
     "author": "tuongho",
-    "created_at": "2022-12-31T17:00:00.000Z",
+    "created_at": "2024-05-31T17:00:00.000Z",
     "categories": ["Jenkins"],
     "tags": ["docker, git, jenkins"],
     "image": "assets/images/post3.png"
@@ -42,7 +42,7 @@
     "content": "Bạn có đang rối giữa ReactJS vs React Native? Nên chọn cái nào thì tốt hơn? Có thể tái sử dụng code của ReactJS cho React Native hay không? Hãy khám phá câu trả lời thông qua bài viết so sánh ReactJS vs React Native này bạn nhé!\n\nTrước khi đi vào so sánh chi tiết ReactJS vs React Native, hãy cùng tìm hiểu sơ qua lịch sử của hai công nghệ mạnh mẽ này.\n\nReactJS và React Native có một lịch sử khá là thú vị",
     "image": "post4.png",
     "author": "tuongho",
-    "created_at": "2023-01-01T17:00:00.000Z",
+    "created_at": "2024-01-03T17:00:00.000Z",
     "categories": ["Raspberry"],
     "tags": ["python, raspberry, embedded"],
     "image": "assets/images/post4.png"
@@ -54,7 +54,7 @@
     "content": "Docker là một trong những requirement xuất hiện liên tục trong những JD tuyển dụng backend developer trong những năm gần đây. Rồi nào là DevOps, rồi SRE, CI/CD đều cần phải biết Docker. Qua bài viết này mình hy vọng sẽ giúp các bạn hiểu được một chút về Docker và lý do tại sao lại cần nó như thế.",
     "image": "post5.png",
     "author": "tuongho",
-    "created_at": "2023-01-02T17:00:00.000Z",
+    "created_at": "2024-02-02T17:00:00.000Z",
     "categories": ["DevOps"],
     "tags": ["docker, git, jenkins"],
     "image": "assets/images/post5.png"
@@ -66,7 +66,19 @@
     "content": "Docker là một trong những requirement xuất hiện liên tục trong những JD tuyển dụng backend developer trong những năm gần đây. Rồi nào là DevOps, rồi SRE, CI/CD đều cần phải biết Docker. Qua bài viết này mình hy vọng sẽ giúp các bạn hiểu được một chút về Docker và lý do tại sao lại cần nó như thế.",
     "image": "post5.png",
     "author": "khanhphan",
-    "created_at": "2023-01-02T17:00:00.000Z",
+    "created_at": "2024-01-02T17:00:00.000Z",
+    "categories": ["DevOps"],
+    "tags": ["docker, git, jenkins"],
+    "image": "/image1.png"
+  },
+  {
+    "id": 7,
+    "title": "Triển khai Jenkins như là một Docker Container",
+    "slug": "trien-khai-jenkins-nhu-la-mot-docker-container",
+    "content": "Docker là một trong những requirement xuất hiện liên tục trong những JD tuyển dụng backend developer trong những năm gần đây. Rồi nào là DevOps, rồi SRE, CI/CD đều cần phải biết Docker. Qua bài viết này mình hy vọng sẽ giúp các bạn hiểu được một chút về Docker và lý do tại sao lại cần nó như thế.",
+    "image": "post5.png",
+    "author": "khanhphan",
+    "created_at": "2024-03-02T17:00:00.000Z",
     "categories": ["DevOps"],
     "tags": ["docker, git, jenkins"],
     "image": "/image1.png"

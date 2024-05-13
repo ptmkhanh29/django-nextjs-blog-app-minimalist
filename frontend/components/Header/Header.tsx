@@ -45,10 +45,8 @@ export const Header = ({ blogName }: HeaderType) => {
 
   return (
     <>
+      <div className={styles.headerContainer}>
         <nav className={styles.navbar}>
-            <div className={styles.logo}>
-                <Link href="/">{blogName}</Link>
-            </div>
             <div className={styles.menu}>
                 <Link legacyBehavior href="/" passHref>
                     <a className={isActive('/') ? styles.active : ''}>Home</a>
@@ -59,20 +57,12 @@ export const Header = ({ blogName }: HeaderType) => {
                 <Link legacyBehavior href="/about" passHref>
                     <a className={isActive('/about') ? styles.active : ''}>About</a>
                 </Link>
+                <Link legacyBehavior href="/search" passHref>
+                    <a className={isActive('/search') ? styles.active : ''}>Search</a>
+                </Link>
             </div>
         </nav>
-        <div className={styles.postContainer}>
-            <div className={styles.subHeader}>
-                <span className={styles.boldText}>##</span> Một ngày đẹp trời thế là chiếc blog này được <a href="https://github.com/ptmkhanh29/django-nextjs-blog-app-minimalist" className={styles.link} target="_blank" rel="noopener noreferrer">build</a>
-            </div>
-            <div className={styles.categories}>
-              {categoriesWithColors.map((category, index) => (
-                <Link key={index} href={`/category/${category.name.toLowerCase()}`} className={styles.category} style={{ '--color': category.color }}>
-                  {category.name}
-                </Link>
-              ))}
-            </div>
-        </div>
+      </div>
     </>
   );
 };

@@ -13,9 +13,9 @@
 .titleContainer {
   display: flex;
   justify-content: center;
-  color: #FFFFFF; /* white */
-  font-size: 2.25rem; /* text-4xl */
-  padding-top: 1rem;
+  color: var(--post-container-color);
+  font-size: 2.0rem; /* text-4xl */
+  padding-top: 1.5rem;
   padding-bottom: 1rem;
 }
 

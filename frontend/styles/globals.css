@@ -69,45 +69,55 @@
     }
 } */
 
-.main-container {
-    display: flex; /* Sử dụng flexbox để quản lý layout */
-    min-height: 100vh;
-    background-color: var(--bg-color);
-    box-sizing: border-box;
+.body-container {
+    display: flex;
+    flex-direction: column;  /* Sắp xếp các thành phần theo chiều dọc */
+    min-height: 100vh;       /* Chiều cao tối thiểu bằng với viewport */
+    width: 100%;             /* Chiều rộng tối đa */
+}
+
+.header {
     width: 100%;
-    overflow-x: hidden; /* Ngăn chặn thanh cuộn ngang */
+    background-color: var(--header-bg-color); /* Màu nền */
+    display: flex;
+    justify-content: center; /* Căn giữa nội dung bên trong */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.main-container {
+    display: flex;           /* Sử dụng Flexbox để quản lý layout */
+    flex-grow: 1;            /* Cho phép container mở rộng chiếm dụng không gian còn lại */
+    width: 100%;             /* Chiều rộng tối đa */
 }
 
 .sidebar {
-    width: 25%; /* Sidebar chiếm 25% chiều rộng màn hình */
-    box-sizing: border-box; /* Đảm bảo rằng padding và border không làm tăng chiều rộng */
-    padding: 20px; /* Ví dụ padding */
-    overflow: hidden;
+    flex: 0 0 25%;           /* Cố định chiều rộng 25% và không cho phép co giãn */
+    padding: 0 20px 20px 20px;           /* Padding xung quanh nội dung */
+    overflow: auto;          /* Cho phép cuộn nếu nội dung vượt quá kích thước */
 }
 
 .main-content {
-    width: 55%; /* Nội dung chính chiếm 50% chiều rộng màn hình */
-    box-sizing: border-box;
-    padding: 10px 20px 20px 20px;
-    overflow: hidden;
-    align-items: stretch;
+    flex: 1 1 55%;                 /* Cho phép nội dung chính mở rộng linh hoạt */
+    padding: 5px 40px 20px 20px;           /* Padding xung quanh nội dung */
+    overflow: auto;          /* Cho phép cuộn nếu nội dung vượt quá kích thước */
 }
 
-.panels {
-    width: 20%; /* Phần tag chiếm 25% chiều rộng màn hình */
-    background-color: #ccc; /* Màu nền cho tags */
+.panel {
+    flex: 0 0 20%;           /* Cố định chiều rộng 20% và không cho phép co giãn */
+    padding: 40px 50px 20px 0;           /* Padding xung quanh nội dung */
 }
+
 
 /* Media Queries cho các màn hình nhỏ hơn 1024px */
 @media (max-width: 1024px) {
     .sidebar,
-    .panels {
+    .panel {
         display: none; /* Ẩn sidebar và panels trên thiết bị nhỏ */
     }
     
     .main-content {
         width: 100%; /* Cho main-content chiếm 100% chiều rộng màn hình */
-        padding: 20px;
+        padding: 5px 20px 0 20px;
     }
 }
 

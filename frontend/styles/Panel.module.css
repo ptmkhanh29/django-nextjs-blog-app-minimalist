@@ -1,0 +1,44 @@
+/* styles/Sidebar.module.css */
+.panelContainer {
+    position: fixed; /* Fixed position to stay on the left */
+    padding-right: 10px;
+}
+
+.panelContainer p {
+  color: #000000; /* Light grey color, adjust as needed */
+  margin: 0 0 15px 0; /* Space above and below */
+  font-size: 17px; /* Font size */
+  font-family: var(--font-sidebar);
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 4px 8px;          /* Điều chỉnh khung bao Category */
+    padding-left: 10px;
+    background-color: #f5f5f5;
+    border-radius: 15px;       /* Điều chỉnh khung bao Category */
+    font-size: 12px;           /* Điều chỉnh chữ trong khung bao Category */
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    position: relative;
+    margin-right: 6px;
+    transition: background-color 0.3s, transform 0.3s ease; /* Thêm transform vào transition */
+}
+
+.tag:hover {
+    background-color: #e0e0e0; /* Màu khi hover */
+    transform: scale(1.05);     /* Phóng to thẻ tag khi hover */
+}
