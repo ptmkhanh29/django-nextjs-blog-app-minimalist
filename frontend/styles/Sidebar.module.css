@@ -4,7 +4,7 @@
     width: 25%;
     height: 100vh; /* Full height */
     background-color: var(--bg-color); /* Background color similar to bg-slate-900 */
-    padding-left: 70px; /* Padding around the content */
+    padding-left: 90px; /* Padding around the content */
     padding-top: 15px;
     padding-right: 20px;
     box-sizing: border-box;

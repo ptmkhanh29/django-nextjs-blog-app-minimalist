@@ -9,9 +9,11 @@ const colors = [
 ];
 
 const url_tags = 'http://127.0.0.1:3001/tags';
+const url_latest_posts = 'http://127.0.0.1:3001/lastedpost';
 
 export const Panel = () => {
   const [tags, setTags] = useState([]);
+  const [latestPosts, setLatestPosts] = useState([]);
 
   useEffect(() => {
     axios.get(url_tags)
@@ -26,19 +28,37 @@ export const Panel = () => {
       .catch(error => console.error('Error fetching tags:', error));
   }, []);
 
+  useEffect(() => {
+    axios.get(url_latest_posts)
+      .then(response => {
+        setLatestPosts(response.data);
+      })
+      .catch(error => console.error('Error fetching posts:', error));
+  }, []);
+
   return (
-    <div className={styles.panelContainer}>
-        <p>#Trending tags</p>
-        <div className={styles.tagsContainer}>
-            {tags.map((tag, index) => (
-                <div key={index} className={styles.tag} style={{ backgroundColor: tag.color }}>
-                    <Link legacyBehavior href={`/tags/${tag.name}`}>
-                        <a>#{tag.name} ({tag.count})</a>
-                    </Link>
+    <>
+      <div className={styles.tasgPanelContainer}>
+          <p>#Trending tags</p>
+          <div className={styles.tagsContainer}>
+              {tags.map((tag, index) => (
+                  <div key={index} className={styles.tag} style={{ backgroundColor: tag.color }}>
+                      <Link legacyBehavior href={`/tags/${tag.name}`}>
+                          <a>#{tag.name} ({tag.count})</a>
+                      </Link>
+                  </div>
+              ))}
+          </div>
+      </div>
+      <div className={styles.latestPostsContainer}>
+          <p>#Recently posts</p>
+              {latestPosts.map((post, index) => (
+                <div key={index} className={styles.post}>
+                    <Link href={`/post/${post.slug}`}>{post.title}</Link>
                 </div>
             ))}
-        </div>
-    </div>
+      </div>
+    </>
   );
 };
 

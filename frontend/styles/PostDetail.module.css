@@ -18,8 +18,19 @@
   padding-top: 1.5rem;
   padding-bottom: 1rem;
 }
+.imageContainer {
+  display: flex;
+  justify-content: center; /* Căn giữa hình ảnh */
+  padding: 1rem 0; /* Thêm padding trên và dưới hình ảnh */
+}
+
+.imageContainer img {
+  max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của container */
+  height: auto; /* Giữ tỷ lệ hình ảnh */
+}
 
 /* Content container styles */
 .contentContainer {
   color: #9CA3AF; /* gray-400 */
 }
+

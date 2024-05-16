@@ -21,3 +21,20 @@ CMD ["npm", "run", "dev"]
 ## 2. Run docker container from docker image
 
 ##	docker run -p 3000:3000 -v ${PWD}:/app -v /app/node_modules docker-next
+
+## -p 3000:3000
+
+## Ánh xạ cổng 3000 từ máy host đến cổng 3000 của container => có thể truy cập ứng dụng đang chạy trong container thông qua cổng 3000 của máy chủ
+
+## -v ${PWD}:/app 
+
+## gắng thư mục hiện tại ${PWD} đến thư mục /app trong container => đồng bộ mã nguồn từ máy chủ vào container, khi có thay đổi trong thư mục máy
+
+## chủ thì trong container ngay lập tức được đồng bộ
+
+## -v /app/node_modules
+
+## tạo một volume ẩn danh cho thư mục node_modules trong container =>  thư mục node_modules của container không bị ghi đè bởi volume của máy chủ
+
+## docker-next => tên của docker image muốn chạy
+

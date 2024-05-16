@@ -1,7 +1,7 @@
 import { PostDetail, PostType } from '../../components/Post';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
-import JSON_POSTS from '../../public/data/posts.json';
+import fetch from 'node-fetch';
 
 type PostDetailPageType = {
   post: PostType;
@@ -12,18 +12,25 @@ type Params = ParsedUrlQuery & {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = JSON_POSTS.map(post => ({
+  // Fetch the list of posts from the API
+  const res = await fetch('http://127.0.0.1:3001/posts');
+  const posts: PostType[] = await res.json();
+
+  // Generate the paths for each post based on the slug
+  const paths = posts.map(post => ({
     params: { slug: post.slug }
   }));
   console.log(paths); // Check what paths are being returned
   return { paths, fallback: false };
 };
 
-
-
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as Params;
-  const post = JSON_POSTS.find(post => post.slug === slug);
+
+  // Fetch the post details from the API using the slug
+  const res = await fetch(`http://127.0.0.1:3001/posts?slug=${slug}`);
+  const posts: PostType[] = await res.json();
+  const post = posts[0];
   console.log(slug, post); // Debug to see if the slug and post are correct
 
   if (!post) {
@@ -34,8 +41,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: { post },
   };
 };
-
-
 
 export default function DetailPost({ post }: PostDetailPageType) {
   return (

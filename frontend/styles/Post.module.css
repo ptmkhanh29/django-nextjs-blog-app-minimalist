@@ -89,7 +89,6 @@
 
 .postCard {
     display: flex;
-    flex-direction: row-reverse;  /* Đảo ngược thứ tự để ảnh nằm bên phải */
     border: 1px solid #ddd;
     border-radius: 10px;  /* Bo tròn góc */
     margin-bottom: 20px;
@@ -121,6 +120,8 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    font-family: var(--font-family-base);
+    font-size: 0.8rem;
 }
 .postTitle {
     margin-bottom: 10px;
@@ -140,6 +141,7 @@
     align-items: center;
     margin-right: 30px; /* Cách ra một chút giữa ngày và tags */
     font-size: 0.85rem; /* Điều chỉnh kích thước font cho phù hợp */
+    font-family: var(--post-list-date);
 }
 
 .postTags {
@@ -147,6 +149,7 @@
     align-items: center;
     font-size: 0.85rem; /* Điều chỉnh kích thước font cho phù hợp */
     flex-wrap: wrap; /* Đảm bảo tags không tràn ra ngoài card */
+    font-family: var(--post-list-tag);
 }
 .emojiIcon {
     font-size: 15px; /* Điều chỉnh kích thước cho phù hợp */

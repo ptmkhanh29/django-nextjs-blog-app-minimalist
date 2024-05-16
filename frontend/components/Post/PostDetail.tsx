@@ -15,6 +15,9 @@ export const PostDetail = ({ post }: PostDetailType) => {
           <div className={styles.titleContainer}>
             {post.title}
           </div>
+          <div className={styles.imageContainer}>
+            <img src="/assets/images/post3.png" alt="Post image" />
+          </div>
           <div className={styles.contentContainer}>
             {post.content}
           </div>

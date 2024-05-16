@@ -1,8 +1,7 @@
 .headerContainer {
     width: 100%; /* Chiếm 55% chiều rộng của .header */
-    padding-right: 50px;
+    padding-right: 120px;
     padding-top: 10px;
-
 }
 @media (max-width: 1024px) {
     .headerContainer {

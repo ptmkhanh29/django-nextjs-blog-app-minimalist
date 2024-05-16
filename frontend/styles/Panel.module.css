@@ -1,12 +1,13 @@
 /* styles/Sidebar.module.css */
-.panelContainer {
+.tasgPanelContainer {
     position: fixed; /* Fixed position to stay on the left */
-    padding-right: 10px;
+    padding-right: 70px;
+    padding-top: 0px;
 }
 
-.panelContainer p {
+.tasgPanelContainer p {
   color: #000000; /* Light grey color, adjust as needed */
-  margin: 0 0 15px 0; /* Space above and below */
+  margin: 0 0 10px 0; /* Space above and below */
   font-size: 17px; /* Font size */
   font-family: var(--font-sidebar);
   box-sizing: border-box;
@@ -21,8 +22,8 @@
     justify-content: left;
     gap: 5px;
     margin-top: 5px;
+    margin-right: 20px;
 }
-
 .tag {
     display: inline-block;
     padding: 4px 8px;          /* Điều chỉnh khung bao Category */
@@ -34,11 +35,36 @@
     color: black;
     text-decoration: none;
     position: relative;
-    margin-right: 6px;
+    margin-right: 2px;
     transition: background-color 0.3s, transform 0.3s ease; /* Thêm transform vào transition */
 }
-
 .tag:hover {
     background-color: #e0e0e0; /* Màu khi hover */
     transform: scale(1.05);     /* Phóng to thẻ tag khi hover */
 }
+
+.latestPostsContainer {
+  margin-top: 170px;
+  position: fixed;
+  margin-right: 110px;
+}
+.latestPostsContainer p {
+  color: #000000; /* Light grey color, adjust as needed */
+  margin: 0 0 10px 0; /* Space above and below */
+  font-size: 17px; /* Font size */
+  font-family: var(--font-sidebar);
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.post {
+  margin-bottom: 10px;
+  font-size: 14px; /* Font size */
+  font-family: var(--font-family-base);
+}
+.post:hover {
+    text-decoration: underline;
+}
+

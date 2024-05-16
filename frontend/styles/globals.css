@@ -15,10 +15,15 @@
   --font-intro-section-post-list: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   --post-list-title: #000000;
   --post-container-color: #717171;
+  --post-list-tag: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  --post-list-date: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 
   /* Sidebar */
   --font-sidebar: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   --profile-name-sidebar: #717171;
+
+  /* Panel */
+  --font-family-base: Lato, 'Microsoft Yahei', sans-serif;
 }
 
 /*
@@ -92,19 +97,20 @@
 
 .sidebar {
     flex: 0 0 25%;           /* Cố định chiều rộng 25% và không cho phép co giãn */
-    padding: 0 20px 20px 20px;           /* Padding xung quanh nội dung */
+    padding: 0 40px 20px 20px;           /* Padding xung quanh nội dung */
     overflow: auto;          /* Cho phép cuộn nếu nội dung vượt quá kích thước */
 }
 
 .main-content {
-    flex: 1 1 55%;                 /* Cho phép nội dung chính mở rộng linh hoạt */
+    flex: 1 1 50%;                 /* Cho phép nội dung chính mở rộng linh hoạt */
     padding: 5px 40px 20px 20px;           /* Padding xung quanh nội dung */
     overflow: auto;          /* Cho phép cuộn nếu nội dung vượt quá kích thước */
 }
 
 .panel {
-    flex: 0 0 20%;           /* Cố định chiều rộng 20% và không cho phép co giãn */
-    padding: 40px 50px 20px 0;           /* Padding xung quanh nội dung */
+    flex: 0 0 25%;           /* Cố định chiều rộng 20% và không cho phép co giãn */
+    padding: 40px 70px 20px 0;           /* Padding xung quanh nội dung */
+
 }
 
 
