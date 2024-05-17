@@ -12,35 +12,38 @@ type Params = ParsedUrlQuery & {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // Fetch the list of posts from the API
-  const res = await fetch('http://127.0.0.1:3001/posts');
-  const posts: PostType[] = await res.json();
+  const res = await fetch('http://172.17.0.2:3001/posts');
+  const posts = await res.json();
 
-  // Generate the paths for each post based on the slug
-  const paths = posts.map(post => ({
-    params: { slug: post.slug }
+  // Tạo một mảng của các đối tượng `params` dựa trên slug của mỗi bài viết
+  const paths = posts.map((post) => ({
+    params: { slug: post.slug },
   }));
-  console.log(paths); // Check what paths are being returned
-  return { paths, fallback: false };
-};
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const { slug } = context.params as Params;
-
-  // Fetch the post details from the API using the slug
-  const res = await fetch(`http://127.0.0.1:3001/posts?slug=${slug}`);
-  const posts: PostType[] = await res.json();
-  const post = posts[0];
-  console.log(slug, post); // Debug to see if the slug and post are correct
-
-  if (!post) {
-    return { notFound: true }; // This will show a 404 page if no post is found
-  }
+  // In ra console để debug
+  console.log("Đây là các đường dẫn sẽ được tạo:", paths);
 
   return {
-    props: { post },
+    paths,
+    fallback: 'blocking'  // or false, depending on your needs
   };
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+    const { slug } = context.params as Params;
+    const res = await fetch(`http://172.17.0.2:3001/posts?slug=${slug}`);
+    const posts: PostType[] = await res.json();
+    const post = posts.find(p => p.slug === slug); // Thực hiện lọc bài viết dựa trên slug
+
+    if (!post) {
+        return { notFound: true }; // Nếu không tìm thấy bài viết, trả về trang 404
+    }
+
+    return {
+        props: { post },
+    };
 };
+
 
 export default function DetailPost({ post }: PostDetailPageType) {
   return (

@@ -1,16 +1,19 @@
-FROM node:18-alpine
+FROM node:18.17-alpine
 
 WORKDIR /app
 
+# Copy package.json và package-lock.json
 COPY package*.json ./
 
-RUN npm install
+# Xóa node_modules và package-lock.json trước khi cài đặt lại
+RUN rm -rf node_modules package-lock.json && npm install --verbose
 
+# Copy toàn bộ source code vào container
 COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "run", "dev"]
+CMD ["sh", "-c", "export PATH=$PATH:/app/node_modules/.bin && npm run dev"]
 
 ## Step by step manual
 

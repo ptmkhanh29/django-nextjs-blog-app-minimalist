@@ -1,8 +1,12 @@
 /* styles/Sidebar.module.css */
 .tasgPanelContainer {
-    position: fixed; /* Fixed position to stay on the left */
-    padding-right: 70px;
-    padding-top: 0px;
+    width: 100%;            /* Chiếm đầy đủ chiều rộng có sẵn */
+    margin: 0;              /* Loại bỏ margin nếu không cần thiết */
+    padding: 0;             /* Điều chỉnh padding cho phù hợp */
+    flex-grow: 1;           /* Cho phép mỗi container mở rộng */
+    overflow: hidden;       /* Ngăn chặn tràn nội dung */
+    margin-bottom: 50px;
+    margin-top: 20px;
 }
 
 .tasgPanelContainer p {
@@ -44,9 +48,11 @@
 }
 
 .latestPostsContainer {
-  margin-top: 170px;
-  position: fixed;
-  margin-right: 110px;
+    width: 100%;            /* Chiếm đầy đủ chiều rộng có sẵn */
+    margin: 0;              /* Loại bỏ margin nếu không cần thiết */
+    padding: 0;             /* Điều chỉnh padding cho phù hợp */
+    flex-grow: 1;           /* Cho phép mỗi container mở rộng */
+    overflow: hidden;       /* Ngăn chặn tràn nội dung */
 }
 .latestPostsContainer p {
   color: #000000; /* Light grey color, adjust as needed */

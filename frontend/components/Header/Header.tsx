@@ -54,11 +54,11 @@ export const Header = ({ blogName }: HeaderType) => {
                 <Link legacyBehavior href="/posts" passHref>
                     <a className={isActive('/posts') ? styles.active : ''}>Posts</a>
                 </Link>
+                <Link legacyBehavior href="/projects" passHref>
+                    <a className={isActive('/projects') ? styles.active : ''}>Proj</a>
+                </Link>
                 <Link legacyBehavior href="/about" passHref>
                     <a className={isActive('/about') ? styles.active : ''}>About</a>
-                </Link>
-                <Link legacyBehavior href="/search" passHref>
-                    <a className={isActive('/search') ? styles.active : ''}>Search</a>
                 </Link>
             </div>
         </nav>
