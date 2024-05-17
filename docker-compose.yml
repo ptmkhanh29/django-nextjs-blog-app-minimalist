@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "3001:3001"  # Port mà backend lắng nghe
+    volumes:
+      - ./backend:/app  # Mount thư mục backend vào container
+    environment:
+      - FLASK_ENV=development
+    restart: on-failure
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"  # Port mà frontend lắng nghe
+    volumes:
+      - ./frontend:/app  # Mount thư mục frontend vào container
+    environment:
+      - NODE_ENV=development
+    restart: on-failure
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

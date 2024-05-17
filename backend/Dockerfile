@@ -1,19 +1,22 @@
-FROM python:3.9-slim
+# Sử dụng base image từ Python 3.8
+FROM python:3.8-slim
 
-ENV PYTHONDONTWRITEBYTECODE 1
-
-ENV PYTHONUNBUFFERED 1
-
+# Thiết lập thư mục làm việc
 WORKDIR /app
 
-COPY requirements.txt /app/
+# Cài đặt các phụ thuộc từ file requirements.txt
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install --upgrade pip
+# Sao chép tất cả các file từ thư mục hiện tại vào thư mục làm việc trong container
+COPY . .
 
-RUN pip install -r requirements.txt
+# Cài đặt biến môi trường
+ENV FLASK_APP=app.py
 
-COPY . /app
+# Khai báo container sẽ lắng nghe trên port 3001
+EXPOSE 3001
 
-CMD ["flask", "run" "--host=0.0.0.0", "--port=3001"]
-
+# Chạy Flask application
+CMD ["flask", "run", "--host=0.0.0.0", "--port=3001"]
 

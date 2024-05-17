@@ -10,6 +10,7 @@
   --header-menu-tag: #000000;
   --header-menu-tag-active: #000000;
   --font-header: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  --header-bg-color: #f8f8f8;
 
   /* Color for post list */
   --font-intro-section-post-list: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
@@ -87,6 +88,7 @@
     display: flex;
     justify-content: center; /* Căn giữa nội dung bên trong */
     align-items: center; /* Căn giữa theo chiều dọc */
+    height: 50px;
 }
 
 .main-container {
