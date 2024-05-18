@@ -44,8 +44,17 @@ export const Footer = () => {
             </svg>
           </div>
         </div>
-        <div className="flex justify-center">
-          KHANHPHAN • © 2024 • Next.js Django Blog
+        <div className="flex justify-center items-center space-x-2">
+          <span>Built with Next.js • Django</span>
+            <img src="/assets/icons/copyright_icon.svg" alt="LinkedIn" className="linkedin-icon" />
+          <span>2024 •</span>
+          <span>by @ptmkhanh29 (Khanh Phan)</span>
+          <style jsx>{`
+            .linkedin-icon {
+              width: 20px;
+              height: auto;
+            }
+          `}</style>
         </div>
       </footer>
     </>

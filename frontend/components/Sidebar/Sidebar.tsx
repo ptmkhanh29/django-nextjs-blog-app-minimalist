@@ -47,6 +47,12 @@ export const Sidebar = () => {
                     <span style={{ textDecoration: 'underline' }}> Email for me</span>
                 </a>
             </Link>
+            <Link legacyBehavior href="/assets/pdf/DevOps_Embedded.pdf">
+                <a className={styles.iconSocial} target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/icons/resume-icon.svg" alt="LinkedIn" />
+                    <span style={{ textDecoration: 'underline' }}> Go to my résume</span>
+                </a>
+            </Link>
           </div>
         </div>
     );

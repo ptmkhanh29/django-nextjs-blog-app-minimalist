@@ -6,7 +6,7 @@
     flex-grow: 1;           /* Cho phép mỗi container mở rộng */
     overflow: hidden;       /* Ngăn chặn tràn nội dung */
     margin-bottom: 50px;
-    margin-top: 20px;
+    margin-top: 8px;
 }
 
 .tasgPanelContainer p {
@@ -58,7 +58,7 @@
   color: #000000; /* Light grey color, adjust as needed */
   margin: 0 0 10px 0; /* Space above and below */
   font-size: 17px; /* Font size */
-  font-family: var(--font-sidebar);
+  font-family: var(--font-panel);
   box-sizing: border-box;
   overflow-wrap: break-word;
   text-decoration: underline;
@@ -68,7 +68,7 @@
 .post {
   margin-bottom: 10px;
   font-size: 14px; /* Font size */
-  font-family: var(--font-family-base);
+  font-family: var(--font-panel);
 }
 .post:hover {
     text-decoration: underline;

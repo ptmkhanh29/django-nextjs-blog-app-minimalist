@@ -7,16 +7,23 @@ import styles from '../../styles/PostDetail.module.css'; // Ensure the path is c
 type PostDetailType = {
   post: PostType;
 };
+
 export const PostDetail = ({ post }: PostDetailType) => {
   return (
     <>
       <Main>
         <div className={styles.postDetailContainer}>
+          <nav aria-label={styles.Breadcrumb}>
+            <ul className={styles.breadcrumb}> {/* sửa 'class' thành 'className' */}
+              <li><a href="/">Home</a></li>
+              <li aria-current="page">{post.title}</li>
+            </ul>
+          </nav>
           <div className={styles.titleContainer}>
             {post.title}
           </div>
           <div className={styles.imageContainer}>
-            <img src="/assets/images/post3.png" alt="Post image" />
+            <img src={post.image} alt={post.title} />
           </div>
           <div className={styles.contentContainer}>
             {post.content}

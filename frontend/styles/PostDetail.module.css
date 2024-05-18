@@ -3,34 +3,99 @@
     color: var(--post-container-color);
     font-family: var(--font-header);
 }
-.dateContainer {
-  display: flex;
-  justify-content: center;
-  color: #4B5563; /* gray-500 */
+.breadcrumb {
+    list-style: none; /* Loại bỏ dấu đầu dòng */
+    padding-top: 10px;
+    margin: 0;
+    font-size: 16px; /* Điều chỉnh kích thước phông chữ */
+    color: #333; /* Đặt màu chữ */
 }
+
+.breadcrumb li {
+    display: inline; /* Hiển thị các mục trên cùng một hàng */
+}
+
+.breadcrumb li a {
+    color: blue; /* Màu cho liên kết */
+    text-decoration: none; /* Loại bỏ gạch chân */
+}
+
+.breadcrumb li::after {
+    content: " › "; /* Thêm ký tự ngăn cách */
+    color: #666; /* Màu của ngăn cách */
+}
+
+.breadcrumb li:last-child::after {
+    content: none; /* Không hiển thị ngăn cách sau mục cuối cùng */
+}
+
+.dateContainer {
+    display: flex;
+    justify-content: center;
+    color: #4B5563; /* gray-500 */
+} 
 
 /* Title container styles */
 .titleContainer {
-  display: flex;
-  justify-content: center;
-  color: var(--post-container-color);
-  font-size: 2.0rem; /* text-4xl */
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size: 2.0rem; /* text-4xl */
+    padding-top: 8px;
+    padding-bottom: 1rem;
+    font-weight: bold;
+    font-family: var(--font-family-base);
 }
 .imageContainer {
-  display: flex;
-  justify-content: center; /* Căn giữa hình ảnh */
-  padding: 1rem 0; /* Thêm padding trên và dưới hình ảnh */
+    display: flex;
+    justify-content: center; /* Căn giữa hình ảnh */
+    padding: 1rem 0; /* Thêm padding trên và dưới hình ảnh */
 }
 
 .imageContainer img {
-  max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của container */
-  height: auto; /* Giữ tỷ lệ hình ảnh */
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của container */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+    border-radius: 10px; /* Bo góc của hình ảnh */
+}
+
+.imageContainer img:hover {
+    border-color: #000; /* Thay đổi màu border khi hover */
+    cursor: pointer; /* Thay đổi con trỏ để chỉ ra có thể click */
 }
 
 /* Content container styles */
 .contentContainer {
-  color: #9CA3AF; /* gray-400 */
+    color: black; /* gray-400 */
+    font-family: var(--font-family-base);
+    line-height: 2.0;
 }
-
+@media (max-width: 1024px) {
+    .titleContainer {
+        padding-top: 15px;
+        font-size: 1.6rem; /* text-4xl */
+    }
+    .breadcrumb {
+        padding-top: 15px;
+        font-size: 15px;
+    }
+}
+@media (max-width: 768px) {
+    .titleContainer {
+        padding-top: 15px;
+        font-size: 1.6rem; /* text-4xl */
+    }
+    .breadcrumb {
+        padding-top: 15px;
+        font-size: 15px;
+    }
+}
+@media (max-width: 480px) {
+    .titleContainer {
+        padding-top: 15px;
+        font-size: 1.6rem; /* text-4xl */
+    }
+    .breadcrumb {
+        padding-top: 15px;
+        font-size: 15px;
+    }
+}

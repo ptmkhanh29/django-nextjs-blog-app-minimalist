@@ -43,7 +43,9 @@
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.0",
     "typescript": "4.9.4",
-    "unified": "^11.0.4"
+    "unified": "^11.0.4",
+    "rehype-prism-plus": "latest",
+    "rehype-code-titles": "latest"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

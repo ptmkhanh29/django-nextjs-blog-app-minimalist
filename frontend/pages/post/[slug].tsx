@@ -12,7 +12,7 @@ type Params = ParsedUrlQuery & {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch('http://172.17.0.2:3001/posts');
+  const res = await fetch('http://172.17.0.3:3001/posts');
   const posts = await res.json();
 
   // Tạo một mảng của các đối tượng `params` dựa trên slug của mỗi bài viết
@@ -31,7 +31,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const { slug } = context.params as Params;
-    const res = await fetch(`http://172.17.0.2:3001/posts?slug=${slug}`);
+    const res = await fetch(`http://172.17.0.3:3001/posts?slug=${slug}`);
     const posts: PostType[] = await res.json();
     const post = posts.find(p => p.slug === slug); // Thực hiện lọc bài viết dựa trên slug
 

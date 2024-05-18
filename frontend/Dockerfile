@@ -6,6 +6,9 @@ WORKDIR /app
 COPY package*.json ./
 
 # Xóa node_modules và package-lock.json trước khi cài đặt lại
+
+USER root
+
 RUN rm -rf node_modules package-lock.json && npm install --verbose
 
 # Copy toàn bộ source code vào container

@@ -25,6 +25,7 @@
 
   /* Panel */
   --font-family-base: Lato, 'Microsoft Yahei', sans-serif;
+  --font-panel: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 }
 
 /*
@@ -98,6 +99,7 @@
     width: 100%;             /* Chiều rộng tối đa */
 }
 
+
 .sidebar {
     flex: 0 0 25%;           /* Cố định chiều rộng 25% và không cho phép co giãn */
     padding: 50px 40px 20px 20px;           /* Padding xung quanh nội dung */
@@ -106,7 +108,7 @@
 
 .main-content {
     flex: 1 1 50%;                 /* Cho phép nội dung chính mở rộng linh hoạt */
-    padding: 50px 40px 20px 20px;           /* Padding xung quanh nội dung */
+    padding: 50px 0px 20px 20px;           /* Padding xung quanh nội dung */
     overflow: auto;          /* Cho phép cuộn nếu nội dung vượt quá kích thước */
 }
 
@@ -114,12 +116,22 @@
     display: flex;
     flex-direction: column; /* Quản lý các thành phần con theo chiều dọc */
     flex: 0 0 25%;         /* Giữ nguyên chiều rộng cố định 25% */
-    padding: 50px 70px 20px 0; /* Giữ nguyên padding, điều chỉnh nếu cần */
+    padding: 50px 50px 20px 40px; /* Giữ nguyên padding, điều chỉnh nếu cần */
     height: 100%;          /* Nếu bạn muốn `.panel` chiếm đầy đủ chiều cao có thể */
 }
-
-
-
+@media (max-width: 1200px) {
+    .panel {
+        display: none; /* Ẩn sidebar và panels trên thiết bị nhỏ */
+    }
+    .sidebar {
+        padding: 50px 0 20px 20px;           /* Padding xung quanh nội dung */
+    }
+    
+    .main-content {
+        width: 100%; /* Cho main-content chiếm 100% chiều rộng màn hình */
+        padding: 40px 70px 0 50px;
+    }
+}
 /* Media Queries cho các màn hình nhỏ hơn 1024px */
 @media (max-width: 1024px) {
     .sidebar,
@@ -129,8 +141,6 @@
     
     .main-content {
         width: 100%; /* Cho main-content chiếm 100% chiều rộng màn hình */
-        padding: 40px 20px 0 20px;
+        padding: 40px 15px 0 20px;
     }
 }
-
-

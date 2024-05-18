@@ -7,7 +7,7 @@
 
 .subHeader {
     color: var(--post-container-color);
-    padding: 20px 0 5px 0;
+    padding: 8px 0 5px 0;
     font-family: 'Roboto Mono', monospace;
 }
 .boldText {

@@ -8,7 +8,7 @@ const colors = [
   "#ffadad","#ffd6a5","#fdffb6","#caffbf","#9bf6ff","#a0c4ff","#bdb2ff","#ffc6ff","#cfcfc4","#ffafcc"
 ];
 
-const url_tags = 'http://127.0.0.1:3001/tags';
+const url_tags = 'http://127.0.0.1:3001/trendingtags';
 const url_latest_posts = 'http://127.0.0.1:3001/lastedpost';
 
 export const Panel = () => {
