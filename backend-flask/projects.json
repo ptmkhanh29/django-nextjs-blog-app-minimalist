@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "slug": "simulation-two-wheeled self-balancing-robot-using-lqr-controller",
+    "title": "Simulation Two-wheeled Self-Balancing Robot using Python and LQR Controller",
+    "content": "Not content",
+    "image": "post1.png",
+    "author": "khanhphan",
+    "created_at": "2023-01-03T17:00:00.000Z",
+    "categories": ["DevOps"],
+    "tags": ["docker, git, jenkins"],
+    "image": "assets/images/post1.png"
+  },
+  {
+    "id": 2,
+    "title": "Top 10 kênh youtube bổ ích về ReactJS và phát triển web",
+    "slug": "top-10-kenh-youtube-bo-ich-ve-reactjs-va-phat-trien-web",
+    "content": "ReactJS là một trong những framework lập trình được các nhà phát triển quan tâm và yêu thích. Hiện nay, có rất nhiều kênh Youtube về ReactJS và các ngôn ngữ lập trình, ở đó bạn có thể học, trải nghiệm thực tế và phân tích chuyên sâu.\n\nĐiều đặc biệt là chúng hoàn toàn miễn phí, bạn có thể học bất cứ khi nào có thời gian. Trong bài viết này, 200Lab sẽ giới thiệu đến bạn top 10 kênh Youtube về ReactJS và phát triển web bổ ích mà bạn nên biết nếu bạn đang quan tâm đến framework ReactJS.",
+    "image": "post2.png",
+    "author": "tuongho",
+    "created_at": "2022-12-30T17:00:00.000Z",
+    "categories": ["Embedded"],
+    "tags": ["c, git, jenkins"],
+    "image": "assets/images/post2.png"
+  },
+  {
+    "id": 3,
+    "title": "Tại sao nên sử dụng ReactJS để phát triển website?",
+    "slug": "tai-sao-nen-su-dung-reactjs-de-phat-trien-website",
+    "content": "Khi nhìn vào một website, bạn thấy điều gì thu hút bạn nhất? Phông chữ của website, giao diện người dùng hay những thiết kế? Hầu hết người dùng thích một website có giao diện người dùng thân thiện và dễ sử dụng, đó là nơi React xuất hiện.\n\nReactJS đã nổi lên như một trong những thư viện lớn nhất được các nhà phát triển và doanh nghiệp sử dụng trong vài năm qua. Trong bài viết này, chúng ta sẽ cùng tìm hiểu về những lý do vì sao ReactJS được xem là ngôn ngữ lập trình mà các developer nên lựa chọn trong tương lai.",
+    "image": "post3.png",
+    "author": "tuongho",
+    "created_at": "2024-05-31T17:00:00.000Z",
+    "categories": ["Jenkins"],
+    "tags": ["docker, git, jenkins"],
+    "image": "assets/images/post3.png"
+  },
+  {
+    "id": 4,
+    "title": "ReactJS vs React Native - Gà cùng một mẹ liệu có giống nhau?",
+    "slug": "reactJS-vs-react-native-ga-cung-mot-me-lieu-co-giong-nhau",
+    "content": "Bạn có đang rối giữa ReactJS vs React Native? Nên chọn cái nào thì tốt hơn? Có thể tái sử dụng code của ReactJS cho React Native hay không? Hãy khám phá câu trả lời thông qua bài viết so sánh ReactJS vs React Native này bạn nhé!\n\nTrước khi đi vào so sánh chi tiết ReactJS vs React Native, hãy cùng tìm hiểu sơ qua lịch sử của hai công nghệ mạnh mẽ này.\n\nReactJS và React Native có một lịch sử khá là thú vị",
+    "image": "post4.png",
+    "author": "tuongho",
+    "created_at": "2024-01-03T17:00:00.000Z",
+    "categories": ["Raspberry"],
+    "tags": ["python, raspberry, embedded"],
+    "image": "assets/images/post4.png"
+  },
+  {
+    "id": 5,
+    "title": "Docker là gì? Khi nào nên dùng Docker?",
+    "slug": "docker-la-gi-khi-nao-nen-dung-docker",
+    "content": "Docker là một trong những requirement xuất hiện liên tục trong những JD tuyển dụng backend developer trong những năm gần đây. Rồi nào là DevOps, rồi SRE, CI/CD đều cần phải biết Docker. Qua bài viết này mình hy vọng sẽ giúp các bạn hiểu được một chút về Docker và lý do tại sao lại cần nó như thế.",
+    "image": "post5.png",
+    "author": "tuongho",
+    "created_at": "2024-02-02T17:00:00.000Z",
+    "categories": ["DevOps"],
+    "tags": ["docker, git, jenkins"],
+    "image": "assets/images/post5.png"
+  },
+  {
+    "id": 6,
+    "title": "Docker là gì?",
+    "slug": "docker-la-gi",
+    "content": "Docker là một trong những requirement xuất hiện liên tục trong những JD tuyển dụng backend developer trong những năm gần đây. Rồi nào là DevOps, rồi SRE, CI/CD đều cần phải biết Docker. Qua bài viết này mình hy vọng sẽ giúp các bạn hiểu được một chút về Docker và lý do tại sao lại cần nó như thế.",
+    "image": "post5.png",
+    "author": "khanhphan",
+    "created_at": "2024-01-02T17:00:00.000Z",
+    "categories": ["DevOps"],
+    "tags": ["docker, git, jenkins"],
+    "image": "/image1.png"
+  },
+  {
+    "id": 7,
+    "title": "Triển khai Jenkins như là một Docker Container",
+    "slug": "trien-khai-jenkins-nhu-la-mot-docker-container",
+    "content": "Docker là một trong những requirement xuất hiện liên tục trong những JD tuyển dụng backend developer trong những năm gần đây. Rồi nào là DevOps, rồi SRE, CI/CD đều cần phải biết Docker. Qua bài viết này mình hy vọng sẽ giúp các bạn hiểu được một chút về Docker và lý do tại sao lại cần nó như thế.",
+    "image": "post5.png",
+    "author": "khanhphan",
+    "created_at": "2024-03-02T17:00:00.000Z",
+    "categories": ["DevOps"],
+    "tags": ["docker, git, jenkins"],
+    "image": "/image1.png"
+  }
+]

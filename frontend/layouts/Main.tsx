@@ -22,13 +22,14 @@ const Main = (props: IMainProps) => (
         </div>
         <div class="main-content">
           <>{props.children}</>
-          <Footer />
         </div>
         <div class="panel">
           <Panel />
         </div>
       </div>
-
+      <div class="Footer">
+        <Footer />
+      </div>
     </main>
   </>
 );

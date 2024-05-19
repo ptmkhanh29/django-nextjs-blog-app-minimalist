@@ -2,6 +2,7 @@ import { PostDetail, PostType } from '../../components/Post';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
 import fetch from 'node-fetch';
+import moment from 'moment';
 
 type PostDetailPageType = {
   post: PostType;
@@ -15,12 +16,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch('http://172.17.0.3:3001/posts');
   const posts = await res.json();
 
-  // Tạo một mảng của các đối tượng `params` dựa trên slug của mỗi bài viết
   const paths = posts.map((post) => ({
     params: { slug: post.slug },
   }));
 
-  // In ra console để debug
   console.log("Đây là các đường dẫn sẽ được tạo:", paths);
 
   return {
@@ -33,15 +32,21 @@ export const getStaticProps: GetStaticProps = async (context) => {
     const { slug } = context.params as Params;
     const res = await fetch(`http://172.17.0.3:3001/posts?slug=${slug}`);
     const posts: PostType[] = await res.json();
-    const post = posts.find(p => p.slug === slug); // Thực hiện lọc bài viết dựa trên slug
+    const post = posts.find(p => p.slug === slug);
+    const formattedDate = moment(post.created_at).format('MMM D, YYYY');
 
     if (!post) {
-        return { notFound: true }; // Nếu không tìm thấy bài viết, trả về trang 404
+        return { notFound: true }; 
     }
 
     return {
-        props: { post },
-    };
+    props: {
+      post: {
+        ...post,
+        formattedDate,
+      },
+    },
+  };
 };
 
 

@@ -38,18 +38,37 @@
 /* Title container styles */
 .titleContainer {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     color: black;
     font-size: 2.0rem; /* text-4xl */
-    padding-top: 8px;
+    padding-top: 20px;
     padding-bottom: 1rem;
     font-weight: bold;
     font-family: var(--font-family-base);
 }
+.authorContainer {
+    font-size: 15px; /* Adjust size as needed */
+    color: black; /* Use a variable or specific color */
+    padding-top: 0;
+    margin-bottom: 0; /* Space between header and post list */
+    padding-left: 0; /* Alignment with posts if necessary */
+    font-family: var(--font-header);
+    font-family: var(--font-family-base);
+}
+.categoryContainer {
+    font-size: 15px; /* Adjust size as needed */
+    color: black; /* Use a variable or specific color */
+    padding-top: 5px;
+    margin-bottom: 0; /* Space between header and post list */
+    padding-left: 0; /* Alignment with posts if necessary */
+    font-family: var(--font-header);
+    font-family: var(--font-family-base);
+}
+
 .imageContainer {
     display: flex;
     justify-content: center; /* Căn giữa hình ảnh */
-    padding: 1rem 0; /* Thêm padding trên và dưới hình ảnh */
+    padding: 20px 0 30px 0; /* Thêm padding trên và dưới hình ảnh */
 }
 
 .imageContainer img {
@@ -62,13 +81,95 @@
     border-color: #000; /* Thay đổi màu border khi hover */
     cursor: pointer; /* Thay đổi con trỏ để chỉ ra có thể click */
 }
+/* Tags and Time Estimate Block */
+.tagsAndTimeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Phân tách các tag và thời gian đọc ra hai bên */
+    padding: 0 0 20px 0; /* Thêm đệm cho khoảng cách */
+    width: 100%; /* Đảm bảo rằng container mở rộng 100% chiều rộng có sẵn */
+}
+
+.postTags {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem; /* Điều chỉnh kích thước chữ cho phù hợp */
+    font-family: var(--post-list-tag); /* Thay bằng font thực tế của bạn */
+    flex: 1; /* Linh hoạt chia sẻ không gian với phần thời gian đọc */
+    flex-wrap: nowrap; /* Không cho phép các tag xuống hàng */
+    margin-right: auto;
+}
+
+.tag {
+    background-color: #333; /* Nền tối để dễ nhìn */
+    color: #fff; /* Chữ màu trắng để tạo sự tương phản */
+    padding: 3px 7px; /* Đệm bên trong mỗi tag */
+    border-radius: 5px; /* Viền tròn cho thẩm mỹ */
+    margin: 0 5px 5px 0; /* Khoảng cách giữa các tag */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà khi hover */
+    cursor: pointer; /* Hiển thị con trỏ như một dấu hiệu có thể tương tác */
+}
+
+.tag:hover {
+    transform: scale(1.02); /* Phóng to tag khi hover */
+    background-color: #555; /* Nền tối hơn khi hover */
+}
+
+.emojiIcon {
+    font-size: 15px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle; /* Căn giữa icon với văn bản xung quanh */
+}
+
+.readingTime {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem; /* Kích thước chữ tương đương với các tag */
+    margin-left: auto; /* Đẩy thời gian đọc ra xa lề phải */
+    white-space: nowrap; /* Ngăn không cho nội dung này xuống hàng */
+}
 
 /* Content container styles */
 .contentContainer {
+    border-top: 1px solid #e1e1e1;
+    padding-top: 20px;
     color: black; /* gray-400 */
     font-family: var(--font-family-base);
     line-height: 2.0;
+    padding-bottom: 20px;
 }
+
+/* Section Comment */
+.commentSection {
+  border-top: 1px solid #e1e1e1;
+  padding-top: 20px;
+}
+
+.commentSection h2 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: #2A2A2A;
+}
+
+.commentSection p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #34343C;
+  line-height: 2.0;
+  text-align: justify;
+  font-style: italic;
+  font-family: var(--font-leave-comment);
+}
+.commentSection a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.commentSection a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 1024px) {
     .titleContainer {
         padding-top: 15px;

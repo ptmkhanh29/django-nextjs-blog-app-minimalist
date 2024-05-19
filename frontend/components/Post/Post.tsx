@@ -56,15 +56,15 @@ export const Post = () => {
               </Link>
             ))}
         </div>
-        <div className={styles.postList}>        {/* postList container */}
-          <div className={styles.blogHeader}>
+        <div className={styles.blogHeader}>
             📍featured blog
-          </div>
+        </div>
+        <div className={styles.postList}>        {/* postList container */}
           {posts.map((post) => (
               <Link href={`/post/${post.slug}`} passHref key={post.slug} >
                   <div className={styles.postCard}>
                       <div className={styles.postImage}>
-                          <img src={post.image || '/image1.png'} alt="Mô tả hình ảnh" />
+                          <img src={post.image} alt="Mô tả hình ảnh" />
                       </div>
                       <div className={styles.postContent}>
                           <div className={styles.postTitle}># {post.title}</div>
@@ -77,9 +77,13 @@ export const Post = () => {
                                   {moment(post.created_at).format('MMM D, YYYY')}
                               </div>
                               <div className={styles.postTags}>
-                                  <span className={styles.emojiIcon} style={{ marginRight: '5px' }}>🏷️</span>
-                                  {post.tags.map((tag, index) => (
-                                      <span key={index} className={styles.tag}>{tag}</span>
+                                  <span className={styles.emojiIcon}>
+                                      <img src="/assets/icons/categories_icon.svg" alt="Tag Icon" style={{ width: '20px', height: '20px' }} />
+                                  </span>
+                                  {post.categories.map((category, index) => (
+                                      <span key={index} className={styles.tag}>
+                                          &nbsp;{category}
+                                      </span>
                                   ))}
                               </div>
                           </div>

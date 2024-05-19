@@ -26,6 +26,9 @@
   /* Panel */
   --font-family-base: Lato, 'Microsoft Yahei', sans-serif;
   --font-panel: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+
+  /* Comment */
+  --font-leave-comment: "Source Sans Pro", "Microsoft Yahei", sans-serif;
 }
 
 /*
@@ -118,6 +121,11 @@
     flex: 0 0 25%;         /* Giữ nguyên chiều rộng cố định 25% */
     padding: 50px 50px 20px 40px; /* Giữ nguyên padding, điều chỉnh nếu cần */
     height: 100%;          /* Nếu bạn muốn `.panel` chiếm đầy đủ chiều cao có thể */
+}
+.footer {
+    display: flex;           /* Sử dụng Flexbox để quản lý layout */
+    flex-grow: 1;            /* Cho phép container mở rộng chiếm dụng không gian còn lại */
+    width: 100%;             /* Chiều rộng tối đa */
 }
 @media (max-width: 1200px) {
     .panel {
