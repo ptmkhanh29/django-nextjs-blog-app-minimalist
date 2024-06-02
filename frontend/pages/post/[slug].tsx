@@ -13,7 +13,7 @@ type Params = ParsedUrlQuery & {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch('http://172.17.0.3:3001/posts');
+  const res = await fetch('http://backend:3001/api/articles/');
   const posts = await res.json();
 
   const paths = posts.map((post) => ({
@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const { slug } = context.params as Params;
-    const res = await fetch(`http://172.17.0.3:3001/posts?slug=${slug}`);
+    const res = await fetch(`http://backend:3001/api/articles/?slug=${slug}`);
     const posts: PostType[] = await res.json();
     const post = posts.find(p => p.slug === slug);
     const formattedDate = moment(post.created_at).format('MMM D, YYYY');

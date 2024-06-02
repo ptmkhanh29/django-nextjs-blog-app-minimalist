@@ -2,33 +2,33 @@ version: '3.8'
 
 services:
   backend:
-    build:
-      context: ./backend
-    ports:
-      - "3001:3001"  # Port mà backend lắng nghe
+    build: ./backend    # Tìm vị trí Dockerfile của backend trong thư mục backend
     volumes:
-      - ./backend:/app  # Mount thư mục backend vào container
+      - ./backend:/app  # mount toàn bộ nội dung của folder backend vào trong container
+      - /app/venv
+    ports:
+      - "3001:3001"
     environment:
-      - FLASK_ENV=development
-    restart: on-failure
+      - PYTHONUNBUFFERED=1
+    command: python manage.py runserver 0.0.0.0:3001
     networks:
-      - app-network
+      - default
 
   frontend:
-    build:
-      context: ./frontend
-    ports:
-      - "3000:3000"  # Port mà frontend lắng nghe
+    build: ./frontend
     volumes:
-      - ./frontend:/app  # Mount thư mục frontend vào container
-    environment:
-      - NODE_ENV=development
-    restart: on-failure
-    depends_on:
-      - backend
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: sh -c "export PATH=$$PATH:/app/node_modules/.bin && npm run dev"
     networks:
-      - app-network
+      - default
 
 networks:
-  app-network:
+  default:
     driver: bridge
+
+## docker-compose up -d: container vẫn chạy dù tắt temrinal
+## docker-compose up: container sẽ stop
+## docker-compose up --build: docker luôn build lại images khi chạy

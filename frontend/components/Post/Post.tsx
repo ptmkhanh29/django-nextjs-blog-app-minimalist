@@ -10,8 +10,8 @@ import { faCalendar, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
 const colors = [
   '#33FF57', '#FF5733', '#33C1FF', '#FF33BF', '#8C33FF', '#FFD433', '#FF8E33', '#B8B8B8', '#FFC300', '#581845'
 ];
-const url_post_list = 'http://127.0.0.1:3001/posts';
-const url_categories = 'http://127.0.0.1:3001/categories';
+const url_post_list = 'http://localhost:3001/api/articles/';
+const url_categories = 'http://localhost:3001/api/category/';
 
 function getNextColor() {
   const color = colors.shift();
@@ -46,9 +46,9 @@ export const Post = () => {
   return (
     <>
       <div className={styles.postContainer}>
-        <div className={styles.subHeader}>
+        {/*<div className={styles.subHeader}>
             <span className={styles.boldText}>##</span> Vào một ngày đẹp trời thế là chiếc blog này được <a href="https://github.com/ptmkhanh29/django-nextjs-blog-app-minimalist" className={styles.link} target="_blank" rel="noopener noreferrer">build</a>
-        </div>
+        </div>*/}
         <div className={styles.categories}>
           {categoriesWithColors.map((category, index) => (
               <Link key={index} href={`/category/${category.name.toLowerCase()}`} className={styles.category} style={{ '--color': category.color }}>
@@ -64,7 +64,7 @@ export const Post = () => {
               <Link href={`/post/${post.slug}`} passHref key={post.slug} >
                   <div className={styles.postCard}>
                       <div className={styles.postImage}>
-                          <img src={post.image} alt="Mô tả hình ảnh" />
+                          <img src={post.image_url} alt="Mô tả hình ảnh" />
                       </div>
                       <div className={styles.postContent}>
                           <div className={styles.postTitle}># {post.title}</div>
@@ -80,7 +80,7 @@ export const Post = () => {
                                   <span className={styles.emojiIcon}>
                                       <img src="/assets/icons/categories_icon.svg" alt="Tag Icon" style={{ width: '20px', height: '20px' }} />
                                   </span>
-                                  {post.categories.map((category, index) => (
+                                  {post.category.map((category, index) => (
                                       <span key={index} className={styles.tag}>
                                           &nbsp;{category}
                                       </span>

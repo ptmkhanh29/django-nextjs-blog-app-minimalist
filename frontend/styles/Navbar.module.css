@@ -1,6 +1,6 @@
 .headerContainer {
     width: 100%; /* Chiếm 55% chiều rộng của .header */
-    padding-left: 105px;
+    margin-left: auto;
 }
 @media (max-width: 1024px) {
     .headerContainer {
@@ -47,7 +47,7 @@
 
 .menu a {
     color: var(--header-menu-tag);
-    margin-left: 12px;
+    margin-right: 12px;
     text-decoration: none;
     font-family: var(--font-header);
     font-weight: bold;

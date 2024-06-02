@@ -35,10 +35,10 @@ export const PostDetail = ({ post }: PostDetailType) => {
               </a>
           </Link>
           <div className={styles.categoryContainer}>
-            <div>📁 {post.categories}&nbsp; 📆 Created at {post.formattedDate}</div>
+            <div>📁 {post.category}&nbsp; 📆 Created at {post.formattedDate}</div>
           </div>
           <div className={styles.imageContainer}>
-            <img src={post.image} alt={post.title} />
+            <img src={post.image_url} alt={post.title} />
           </div>
           <div className={styles.tagsAndTimeContainer}>
             <div className={styles.postTags}>
@@ -55,7 +55,7 @@ export const PostDetail = ({ post }: PostDetailType) => {
             </div>
           </div>
           <div className={styles.contentContainer}>
-            {post.content}
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
           <div className={styles.commentSection}>
             <h2>LEAVE A COMMENT</h2>

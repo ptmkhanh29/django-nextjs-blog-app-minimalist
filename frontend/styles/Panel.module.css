@@ -16,7 +16,6 @@
   font-family: var(--font-sidebar);
   box-sizing: border-box;
   overflow-wrap: break-word;
-  text-decoration: underline;
   font-weight: bold;
 }
 
