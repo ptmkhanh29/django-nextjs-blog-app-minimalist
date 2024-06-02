@@ -3,6 +3,10 @@ from django.utils.text import slugify
 from django.utils import timezone
 import re
 from django.contrib.auth.models import User
+from .firebase import upload_image_to_firebase
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField 
+import os
 
 class Type(models.Model):
     name = models.CharField(max_length=100)
@@ -20,6 +24,7 @@ class Category(models.Model):
 
 class Tag(models.Model):
     name = models.CharField(max_length=100)
+    hex_color = models.CharField(max_length=7, default='#FFFFFF')
 
     def __str__(self):
         return self.name
@@ -47,13 +52,15 @@ class Article(models.Model):
 
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)  # Set blank=True to allow form submission without a slug
-    content = models.TextField()
+    #content = models.TextField()
+    content = RichTextUploadingField() # CKEditor Rich Text Field
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    categories = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     tags = models.ManyToManyField(Tag)
-    image = models.ImageField(upload_to='articles_images/')
+    image = models.ImageField(upload_to='articles_images/', default='')
+    image_url = models.URLField(max_length=500, blank=True, null=True)  # Updated field to store image URL from Firebase
     intro = models.TextField()
     estimate_time = models.CharField(max_length=50)
     type = models.ForeignKey(Type, on_delete=models.SET_NULL, null=True)
@@ -81,3 +88,12 @@ class Article(models.Model):
                 num += 1
 
         super().save(*args, **kwargs)
+        
+        if self.image:
+            local_path = self.image.path
+            print(f"local_path = {local_path}")
+            full_path = os.path.join('backend/media/', local_path)
+            print(f"full_path = {full_path}")
+            file_name = f"{self.slug}_{self.image.name}"
+            self.image_url = upload_image_to_firebase(self.title, full_path, os.path.basename(full_path))
+            super().save(update_fields=['image_url'])

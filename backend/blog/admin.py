@@ -17,5 +17,4 @@ class ArticleAdmin(admin.ModelAdmin):
     date_hierarchy = 'publish'
     ordering = ['status', 'publish']
 
-# Đăng ký model và class admin với Django admin
 admin.site.register(Article, ArticleAdmin)
