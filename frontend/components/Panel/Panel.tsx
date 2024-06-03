@@ -3,8 +3,9 @@ import { useRouter } from 'next/router';
 import styles from '../../styles/Panel.module.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { url_tags } from '../../config/_global_var';
 
-const url_tags = 'http://localhost:3001/api/tags/';
+console.log('API Tags:', url_tags);
 
 export const Panel = () => {
   const [tags, setTags] = useState([]);
@@ -25,7 +26,7 @@ export const Panel = () => {
   return (
     <>
       <div className={styles.tasgPanelContainer}>
-          <p>🏷️ Trending tags</p>
+          <p>🏷️Trending tags</p>
           <div className={styles.tagsContainer}>
               {tags.map((tag, index) => (
                   <div key={index} className={styles.tag} style={{ backgroundColor: tag.color }}>

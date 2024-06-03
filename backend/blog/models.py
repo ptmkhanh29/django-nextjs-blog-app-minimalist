@@ -17,6 +17,7 @@ class Type(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
+    hex_color = models.CharField(max_length=7, default='#FFFFFF')
 
     def __str__(self):
         return self.name
@@ -32,17 +33,20 @@ class Tag(models.Model):
 
 def vietnamese_slugify(value):
     replacements = (
-        ("à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ", "a"),
-        ("è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ", "e"),
-        ("ì|í|ị|ỉ|ĩ", "i"),
-        ("ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ", "o"),
-        ("ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ", "u"),
-        ("ỳ|ý|ỵ|ỷ|ỹ", "y"),
-        ("đ", "d"),
+        (r"à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ", "a"),
+        (r"è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ", "e"),
+        (r"ì|í|ị|ỉ|ĩ", "i"),
+        (r"ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ", "o"),
+        (r"ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ", "u"),
+        (r"ỳ|ý|ỵ|ỷ|ỹ", "y"),
+        (r"đ", "d"),
+        (r"[^\w\s-]", ""),
+        (r"[-\s]+", "-"),
     )
     for (pattern, replacement) in replacements:
-        value = re.sub(pattern, replacement, value)
-    return slugify(value)
+        value = re.sub(pattern, replacement, value, flags=re.IGNORECASE)
+    value = slugify(value)
+    return value
 
 
 class Article(models.Model):
@@ -59,7 +63,7 @@ class Article(models.Model):
     updated = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     tags = models.ManyToManyField(Tag)
-    image = models.ImageField(upload_to='articles_images/', default='')
+    image = models.ImageField(upload_to='articles_images/', blank=True, null=True)
     image_url = models.URLField(max_length=500, blank=True, null=True)  # Updated field to store image URL from Firebase
     intro = models.TextField()
     estimate_time = models.CharField(max_length=50)

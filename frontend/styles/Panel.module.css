@@ -2,7 +2,7 @@
 .tasgPanelContainer {
     width: 100%;            /* Chiếm đầy đủ chiều rộng có sẵn */
     margin: 0;              /* Loại bỏ margin nếu không cần thiết */
-    padding: 0;             /* Điều chỉnh padding cho phù hợp */
+    padding: 0 0 0 20px;             /* Điều chỉnh padding cho phù hợp */
     flex-grow: 1;           /* Cho phép mỗi container mở rộng */
     overflow: hidden;       /* Ngăn chặn tràn nội dung */
     margin-bottom: 50px;

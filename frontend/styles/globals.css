@@ -94,7 +94,6 @@
     height: 40px;
     position: fixed;
     z-index: 1000;
-    padding-right: auto;
     justify-content: flex-end; /* Căn phải các thành phần bên trong */
     padding-left: 160px;
 }
@@ -122,7 +121,7 @@
     display: flex;
     flex-direction: column; /* Quản lý các thành phần con theo chiều dọc */
     flex: 0 0 25%;         /* Giữ nguyên chiều rộng cố định 25% */
-    padding: 50px 70px 20px 20px; /* Giữ nguyên padding, điều chỉnh nếu cần */
+    padding: 50px 70px 20px 0; /* Giữ nguyên padding, điều chỉnh nếu cần */
     height: 100%;          /* Nếu bạn muốn `.panel` chiếm đầy đủ chiều cao có thể */
 }
 .footer {
@@ -135,12 +134,12 @@
         display: none; /* Ẩn sidebar và panels trên thiết bị nhỏ */
     }
     .sidebar {
-        padding: 50px 0 20px 20px;           /* Padding xung quanh nội dung */
+        padding: 50px 40px 20px 70px;           /* Padding xung quanh nội dung */
     }
     
     .main-content {
         width: 100%; /* Cho main-content chiếm 100% chiều rộng màn hình */
-        padding: 40px 70px 0 50px;
+        padding: 50px 0 50px 70px;
     }
 }
 /* Media Queries cho các màn hình nhỏ hơn 1024px */
@@ -152,6 +151,22 @@
     
     .main-content {
         width: 100%; /* Cho main-content chiếm 100% chiều rộng màn hình */
-        padding: 40px 15px 0 20px;
+        padding: 50px 15px 0 20px;
+    }
+    .header {
+        width: 100%; /* Cho main-content chiếm 100% chiều rộng màn hình */
+        padding-left: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .header {
+        width: 100%; /* Cho main-content chiếm 100% chiều rộng màn hình */
+        padding-left: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .header {
+        width: 100%; /* Cho main-content chiếm 100% chiều rộng màn hình */
+        padding-left: 20px;
     }
 }

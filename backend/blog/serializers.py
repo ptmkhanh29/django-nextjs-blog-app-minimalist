@@ -23,7 +23,7 @@ class TagSerializer(serializers.ModelSerializer):
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ['name']
+        fields = ['name', 'hex_color']
 
 
 class TypeSerializer(serializers.ModelSerializer):
@@ -35,14 +35,18 @@ class TypeSerializer(serializers.ModelSerializer):
 class ArticleSerializer(serializers.ModelSerializer):
     tags = serializers.SerializerMethodField()
     category = serializers.SerializerMethodField()
+    type = serializers.SerializerMethodField()
 
     class Meta:
         model = Article
         fields = '__all__'
 
+    # get_<field_name>
     def get_tags(self, obj):
         return [tag.name for tag in obj.tags.all()]
 
     def get_category(self, obj):
         return [obj.category.name if obj.category else None]
 
+    def get_type(self, obj):
+        return obj.type.name if obj.type else None

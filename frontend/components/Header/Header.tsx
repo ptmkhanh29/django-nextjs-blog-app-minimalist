@@ -9,39 +9,13 @@ type HeaderType = {
   blogName: string;
 };
 
-const colors = [
-  '#33FF57', '#FF5733', '#33C1FF', '#FF33BF', '#8C33FF', '#FFD433', '#FF8E33', '#B8B8B8', '#FFC300', '#581845'
-];
-
-const url_categories = 'http://127.0.0.1:3001/categories';
-
-function getNextColor() {
-  const color = colors.shift();
-  colors.push(color);
-  return color;
-}
-
 export const Header = ({ blogName }: HeaderType) => {
   const router = useRouter(); // Use the useRouter hook to access the route info
-  const [categoriesWithColors, setCategoriesWithColors] = useState([]);
 
   // Function to determine if the link is active
   const isActive = (href: string) => {
     return router.pathname === href;
   }
-
-  useEffect(() => {
-    axios.get(url_categories)
-      .then(response => {
-        const fetchedCategories = response.data.map(category => ({
-          name: category.name,
-          color: getNextColor()
-        }));
-        setCategoriesWithColors(fetchedCategories);
-      })
-      .catch(error => console.error('Error fetching categories:', error));
-  }, []);
-
 
   return (
     <>

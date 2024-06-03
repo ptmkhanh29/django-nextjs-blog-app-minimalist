@@ -85,11 +85,13 @@
     gap: 20px;  /* Khoảng cách giữa các postCard */
     margin-top: 20px;
     overflow-x: hidden;
-    padding: 5px;
+    padding: 5px 5px 5px 0;
 }
 
 .postCard {
     display: flex;
+    flex-direction: column; /* Chuyển từ column sang row */
+    align-items: flex-start; /* Căn chỉnh các items ở đầu mỗi 'row' */
     border: 1px solid #ddd;
     border-radius: 10px;  /* Bo tròn góc */
     margin-bottom: 20px;
@@ -101,39 +103,42 @@
     box-sizing: border-box;
 }
 
-.postCard:hover {
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-    background-color: #f7f7f7;
-    transform: scale(1.005); /* Tăng kích thước lên 5% */
-    transition: transform 0.3s ease-in-out; /* Thêm chuyển đổi mượt mà */
+.postImage {
+    width: 100%; /* Chiều rộng của ảnh bằng 100% postCard */
+    padding-top: 42.86%; /* Đặt padding-top để duy trì tỷ lệ 21:9 */
+    position: relative; /* Đặt cho position relative để img bên trong có thể sử dụng absolute */
+    overflow: hidden; /* Ẩn các phần của ảnh nằm ngoài khu vực này */
 }
 
-.postImage {
-    min-width: 40%;
-    flex: 2;
-    overflow: hidden;
-}
 .postImage img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Đảm bảo ảnh che phủ đầy đủ khu vực postImage */
 }
+
 .postContent {
-    flex: 3;
+    flex: 3; /* Cho phép nội dung chiếm phần còn lại của postCard */
     padding: 20px;
     display: flex;
     flex-direction: column;
     font-family: var(--font-family-base);
     font-size: 0.8rem;
     box-sizing: border-box;
-    flex-shrink: 0;
+    flex-shrink: 1; /* Cho phép thu nhỏ khi cần */
 }
 .postTitle {
     margin-bottom: 10px;
     font-weight: bold;
     font-family: var(--font-header);
-    font-size: 1.0rem;
+    font-size: 1.1rem;
     color: var(--post-list-title);
+    transition: color 0.3s ease; /* Thêm hiệu ứng chuyển màu */
+}
+.postTitle:hover {
+    color: blue;
 }
 .postMeta {
     display: flex;
@@ -149,7 +154,7 @@
     font-family: var(--post-list-date);
 }
 
-.postTags {
+.postCategory {
     display: flex;
     align-items: center;
     font-size: 0.85rem; /* Điều chỉnh kích thước font cho phù hợp */
@@ -158,6 +163,12 @@
 }
 .tag {
     font-size: 0.9rem;
+    cursor: pointer; /* Thêm con trỏ chuột để chỉ ra rằng có thể nhấp vào */
+    transition: color 0.3s ease; /* Thêm hiệu ứng chuyển màu */
+}
+
+.tag:hover {
+    color: black; /* Thay đổi màu khi hover, bạn có thể thay đổi màu theo ý thích */
 }
 
 .emojiIcon {

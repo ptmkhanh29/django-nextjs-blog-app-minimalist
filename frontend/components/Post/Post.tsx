@@ -6,18 +6,7 @@ import axios from 'axios';
 import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
-
-const colors = [
-  '#33FF57', '#FF5733', '#33C1FF', '#FF33BF', '#8C33FF', '#FFD433', '#FF8E33', '#B8B8B8', '#FFC300', '#581845'
-];
-const url_post_list = 'http://localhost:3001/api/articles/';
-const url_categories = 'http://localhost:3001/api/category/';
-
-function getNextColor() {
-  const color = colors.shift();
-  colors.push(color);
-  return color;
-}
+import { url_post_list,  url_categories} from '../../config/_global_var';
 
 export const Post = () => {
   const [categoriesWithColors, setCategoriesWithColors] = useState([]);
@@ -36,7 +25,7 @@ export const Post = () => {
       .then(response => {
         const fetchedCategories = response.data.map(category => ({
           name: category.name,
-          color: getNextColor()
+          color: category.hex_color
         }));
         setCategoriesWithColors(fetchedCategories);
       })
@@ -60,30 +49,36 @@ export const Post = () => {
             📍featured blog
         </div>
         <div className={styles.postList}>        {/* postList container */}
-          {posts.map((post) => (
+          {posts.filter(post => post.type === "Post").map((post) => (
               <Link href={`/post/${post.slug}`} passHref key={post.slug} >
                   <div className={styles.postCard}>
-                      <div className={styles.postImage}>
-                          <img src={post.image_url} alt="Mô tả hình ảnh" />
-                      </div>
+                      {post.image_url && (
+                        <div className={styles.postImage}>
+                                <img src={post.image_url} alt="Mô tả hình ảnh" />
+                            </div>
+                        )}
                       <div className={styles.postContent}>
                           <div className={styles.postTitle}># {post.title}</div>
                           <div className={styles.postIntroContent}>
-                              {post.content.length > 150 ? `${post.content.slice(0, 150)}...` : post.content}
+                              <div dangerouslySetInnerHTML={{ __html: post.content.length > 200 ? `${post.content.slice(0, 200)}...` : post.content }} />
                           </div>
                           <div className={styles.postMeta}>
                               <div className={styles.postDate}>
                                   <span className={styles.emojiIcon} style={{ marginRight: '5px' }}>🗓️</span>
                                   {moment(post.created_at).format('MMM D, YYYY')}
                               </div>
-                              <div className={styles.postTags}>
+                              <div className={styles.postCategory}>
                                   <span className={styles.emojiIcon}>
                                       <img src="/assets/icons/categories_icon.svg" alt="Tag Icon" style={{ width: '20px', height: '20px' }} />
                                   </span>
                                   {post.category.map((category, index) => (
-                                      <span key={index} className={styles.tag}>
+                                      <Link 
+                                          key={index} 
+                                          href={`/category/${encodeURIComponent(category)}`} 
+                                          className={styles.tag}
+                                          style={{ display: 'inline', cursor: 'pointer' }}>
                                           &nbsp;{category}
-                                      </span>
+                                      </Link>
                                   ))}
                               </div>
                           </div>
