@@ -59,8 +59,18 @@ export const Post = () => {
                         )}
                       <div className={styles.postContent}>
                           <div className={styles.postTitle}># {post.title}</div>
+                          <div className={styles.postTags}>
+                            {post.tags.map((tag, index) => (
+                              <Link 
+                                  key={index} 
+                                  href={`/tags/${encodeURIComponent(tag)}`} 
+                                  className={styles.tags}
+                                  style={{ display: 'inline', cursor: 'pointer' }}>{tag}
+                              </Link>
+                            ))}
+                          </div>
                           <div className={styles.postIntroContent}>
-                              <div dangerouslySetInnerHTML={{ __html: post.content.length > 200 ? `${post.content.slice(0, 200)}...` : post.content }} />
+                              {post.intro}
                           </div>
                           <div className={styles.postMeta}>
                               <div className={styles.postDate}>
