@@ -11,6 +11,10 @@ type PostDetailPageType = {
 type Params = ParsedUrlQuery & {
   slug: string;
 };
+function preprocessContent(content) {
+  // Loại bỏ thẻ <p> mở và đóng
+  return content.replace(/<\/?p>/g, '');
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch('http://backend:3001/api/articles/');
@@ -20,7 +24,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     params: { slug: post.slug },
   }));
 
-  console.log("Đây là các đường dẫn sẽ được tạo:", paths);
+  console.log("This urls will be created: ", paths);
 
   return {
     paths,
@@ -51,9 +55,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 
 export default function DetailPost({ post }: PostDetailPageType) {
+  const processedContent = preprocessContent(post.content);
   return (
     <>
-      <PostDetail post={post} />
+      <PostDetail post={{ ...post, content: processedContent }} />
     </>
   );
 }

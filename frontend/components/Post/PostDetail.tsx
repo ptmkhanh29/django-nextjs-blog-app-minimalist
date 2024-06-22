@@ -1,10 +1,15 @@
 import Link from 'next/link';
 import { PostType } from './Post';
+import { RenderMarkdown } from '../RenderMarkdown';
 import { Main } from '../../layouts/Main';
 import moment from 'moment';
 import styles from '../../styles/PostDetail.module.css'; // Ensure the path is correct
 import { Giscus } from '../Giscus/Giscus';
-
+import React, { useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import { rehype } from 'rehype';
+import rehypeHighlight from 'rehype-highlight';
+import 'highlight.js/styles/github.css';  // Hoặc bất kỳ theme nào bạn thích
 
 const formatDate = (date) => {
   // Set the timezone to UTC or a specific timezone
@@ -16,6 +21,9 @@ type PostDetailType = {
 };
 
 export const PostDetail = ({ post }: PostDetailType) => {
+  console.log("Content Type:", typeof post.content); // Kiểm tra lại kiểu
+  console.log("Content Value:", post.content);       // Xem giá trị thực tế
+  
   return (
     <>
       <Main>
@@ -55,7 +63,7 @@ export const PostDetail = ({ post }: PostDetailType) => {
             </div>
           </div>
           <div className={styles.contentContainer}>
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            <RenderMarkdown content={post.content} />;
           </div>
           <div className={styles.commentSection}>
             <h2>LEAVE A COMMENT</h2>

@@ -1,0 +1,83 @@
+/* Định dạng thanh cuộn */
+.divScroll {
+    overflow-x: auto; /* Thêm này để cho phép cuộn ngang khi cần */
+    overflow-y: auto; /* Giữ nguyên để cho phép cuộn dọc */
+}
+.divScroll::-webkit-scrollbar {
+    width: 8px; /* Đặt độ rộng cho thanh cuộn */
+    height: 8px; /* Cần thiết cho thanh cuộn ngang */
+}
+
+.divScroll::-webkit-scrollbar-track {
+    background: transparent; /* Đường dẫn cuộn là trong suốt */
+}
+
+.divScroll::-webkit-scrollbar-thumb {
+    background: #CED4DA; /* Màu của nút cuộn */
+    border-radius: 5px; /* Bo tròn góc của nút cuộn */
+}
+
+/* Ẩn các nút cuộn */
+.divScroll::-webkit-scrollbar-button {
+    display: none; /* Ẩn các mũi tên */
+}
+
+.iconClipBoard {
+  width: 15px; 
+  height: 15px;
+  padding-bottom: 3px;
+}
+
+.iconCheckMark {
+  width: 15px; 
+  height: 15px;
+  padding-bottom: 3px;
+}
+
+/* Blockquotes.module.css */
+.blockquote {
+    margin: 1em 10px;
+    padding: 0.5em 10px;
+    border-radius: 5px;
+    position: relative;
+    padding-left: 40px;
+}
+
+.icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 20px;
+}
+
+.note {
+    background-color: #ccffcc;
+    border-left: 4px solid #70db70;
+    color: #2F4F4F;
+}
+
+.tip {
+    background-color: #ffffcc;
+    border-left: 4px solid #ffd700;
+    color: #2F4F4F;
+}
+
+.important {
+    background-color: #b3d1ff;
+    border-left: 4px solid #3399ff;
+    color: #2F4F4F;
+}
+
+.warning {
+    background-color: #ffcc99;
+    border-left: 4px solid #ff9933;
+    color: #2F4F4F;
+}
+
+.caution {
+    background-color: #ff9999;
+    border-left: 4px solid #ff3333;
+    color: #2F4F4F;
+}
+
+

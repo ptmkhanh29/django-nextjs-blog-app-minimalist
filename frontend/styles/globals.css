@@ -112,7 +112,7 @@
 }
 
 .main-content {
-    flex: 1 1 50%;                 /* Cho phép nội dung chính mở rộng linh hoạt */
+    flex: 1 1 55%;                 /* Cho phép nội dung chính mở rộng linh hoạt */
     padding: 50px 20px 50px 70px;           /* Padding xung quanh nội dung */
     overflow: auto;          /* Cho phép cuộn nếu nội dung vượt quá kích thước */
 }
@@ -120,7 +120,7 @@
 .panel {
     display: flex;
     flex-direction: column; /* Quản lý các thành phần con theo chiều dọc */
-    flex: 0 0 25%;         /* Giữ nguyên chiều rộng cố định 25% */
+    flex: 0 0 20%;         /* Giữ nguyên chiều rộng cố định 25% */
     padding: 50px 70px 20px 0; /* Giữ nguyên padding, điều chỉnh nếu cần */
     height: 100%;          /* Nếu bạn muốn `.panel` chiếm đầy đủ chiều cao có thể */
 }

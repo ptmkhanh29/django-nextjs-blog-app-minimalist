@@ -56,8 +56,8 @@ class Article(models.Model):
 
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)  # Set blank=True to allow form submission without a slug
-    #content = models.TextField()
-    content = RichTextUploadingField() # CKEditor Rich Text Field
+    content = models.TextField()
+    #content = RichTextUploadingField() # CKEditor Rich Text Field
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

@@ -138,6 +138,34 @@
     font-family: var(--font-family-base);
     line-height: 2.0;
     padding-bottom: 20px;
+    font-size: 13.5px;
+}
+.contentContainer h1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.contentContainer blockquote {
+    padding: 0.5em 10px;
+    border-radius: 5px;
+    position: relative;
+    padding-left: 40px; /* Đảm bảo có đủ không gian cho icon */
+    background-color: #ccffcc;
+    border-left: 4px solid #70db70;
+    color: black;
+
+}
+
+.contentContainer blockquote::before {
+    content: "\f10d"; /* Mã Unicode của icon fas fa-quote-left */
+    font-family: "Font Awesome 5 Free"; /* Sử dụng font-family của Font Awesome */
+    font-weight: 900; /* Font Awesome yêu cầu font-weight 900 cho Solid icons */
+    position: absolute;
+    left: 10px; /* Điều chỉnh vị trí phù hợp */
+    top: 50%; /* Đặt icon ở giữa chiều cao của blockquote */
+    transform: translateY(-50%); /* Cân bằng icon ở giữa theo chiều dọc */
+    font-size: 1.2em; /* Điều chỉnh kích thước của icon */
+    color: #70db70; /* Màu của icon, bạn có thể thay đổi tùy ý */
 }
 
 /* Section Comment */
