@@ -1,0 +1,30 @@
+.blockquote {
+    margin: 20px 0;
+    padding: 0.5em 10px;
+    border-radius: 0 5px 5px 0;
+    position: relative;
+    padding-left: 42px;
+    color: black;
+    list-style-type: none;
+}
+
+.blockquote::before {
+    font-family: "Font Awesome 5 Free"; /* Sử dụng font-family của Font Awesome */
+    font-weight: 900; /* Font Awesome yêu cầu font-weight 900 cho Solid icons */
+    position: absolute;
+    left: 10px; /* Điều chỉnh vị trí phù hợp */
+    top: 50%; /* Đặt icon ở giữa chiều cao của blockquote */
+    transform: translateY(-50%); /* Cân bằng icon ở giữa theo chiều dọc */
+    font-size: 1.2em; /* Điều chỉnh kích thước của icon */
+    display: none; /* Xóa bullet icon mặc định */
+    content: "";
+}
+
+.icon {
+    position: absolute;
+    left: 15px;
+    top: 3px;
+    font-size: 15px;
+}
+
+

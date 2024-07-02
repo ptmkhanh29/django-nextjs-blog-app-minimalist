@@ -4,7 +4,7 @@ import { Header } from '../components/Header';
 import { Post } from '../components/Post';
 import { Sidebar } from '../components/Sidebar';
 import { Main } from '../layouts/Main';
-import { MarkdownRenderer } from '../components/MarkdownRenderer';
+import { RenderMarkdown } from '../components/RenderMarkdown';
 
 const aboutContent = `
 # About Page
@@ -24,7 +24,7 @@ export default function About() {
         <link rel="icon" href="/assets/icons/ubuntu-icon.svg" />
       </Head>
       <Main>
-        <MarkdownRenderer markdown={aboutContent} />
+        <RenderMarkdown markdown={aboutContent} />
       </Main>
     </>
   );

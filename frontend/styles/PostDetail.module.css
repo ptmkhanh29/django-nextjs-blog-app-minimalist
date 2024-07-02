@@ -1,74 +1,52 @@
-/* Date container styles */
+/* Post Detail container styles */
 .postDetailContainer {
     color: var(--post-container-color);
-    font-family: var(--font-header);
+    font-family: var(--font-family-base);
 }
+/* Breadcrumb styles */
 .breadcrumb {
-    list-style: none; /* Loại bỏ dấu đầu dòng */
+    list-style: none; 
     padding-top: 10px;
     margin: 0;
-    font-size: 16px; /* Điều chỉnh kích thước phông chữ */
-    color: #333; /* Đặt màu chữ */
+    font-size: 16px; 
+    color: #333;
+    font-family: var(--font-header);
 }
 
 .breadcrumb li {
-    display: inline; /* Hiển thị các mục trên cùng một hàng */
+    display: inline;
 }
 
 .breadcrumb li a {
-    color: blue; /* Màu cho liên kết */
-    text-decoration: none; /* Loại bỏ gạch chân */
+    color: blue;
+    text-decoration: none;
 }
 
 .breadcrumb li::after {
-    content: " › "; /* Thêm ký tự ngăn cách */
-    color: #666; /* Màu của ngăn cách */
+    content: " › ";
+    color: #666; 
 }
 
 .breadcrumb li:last-child::after {
-    content: none; /* Không hiển thị ngăn cách sau mục cuối cùng */
+    content: none; 
 }
-
-.dateContainer {
-    display: flex;
-    justify-content: center;
-    color: #4B5563; /* gray-500 */
-} 
 
 /* Title container styles */
 .titleContainer {
     display: flex;
     justify-content: left;
     color: black;
-    font-size: 2.0rem; /* text-4xl */
-    padding-top: 20px;
-    padding-bottom: 1rem;
+    font-size: 1.6rem; /* text-4xl */
+    padding-top: 10px;
+    padding-bottom: 20px;
     font-weight: bold;
     font-family: var(--font-family-base);
 }
-.authorContainer {
-    font-size: 15px; /* Adjust size as needed */
-    color: black; /* Use a variable or specific color */
-    padding-top: 0;
-    margin-bottom: 0; /* Space between header and post list */
-    padding-left: 0; /* Alignment with posts if necessary */
-    font-family: var(--font-header);
-    font-family: var(--font-family-base);
-}
-.categoryContainer {
-    font-size: 15px; /* Adjust size as needed */
-    color: black; /* Use a variable or specific color */
-    padding-top: 5px;
-    margin-bottom: 0; /* Space between header and post list */
-    padding-left: 0; /* Alignment with posts if necessary */
-    font-family: var(--font-header);
-    font-family: var(--font-family-base);
-}
-
+/* Image container styles */
 .imageContainer {
     display: flex;
     justify-content: center; /* Căn giữa hình ảnh */
-    padding: 20px 0 30px 0; /* Thêm padding trên và dưới hình ảnh */
+    padding: 10px 0 20px 0; /* Thêm padding trên và dưới hình ảnh */
 }
 
 .imageContainer img {
@@ -81,6 +59,114 @@
     border-color: #000; /* Thay đổi màu border khi hover */
     cursor: pointer; /* Thay đổi con trỏ để chỉ ra có thể click */
 }
+.introAuthorContainer {
+    display: flex; /* Sử dụng Flexbox để đặt các phần tử trên cùng một hàng */
+    align-items: center; /* Canh giữa các phần tử theo chiều dọc */
+}
+.authorContainer {
+    font-size: 13px; /* Adjust size as needed */
+    color: #475569;
+    padding-top: 0;
+    margin-bottom: 0; /* Space between header and post list */
+    padding-left: 0; /* Alignment with posts if necessary */
+    font-family: var(--font-header);
+    font-family: var(--font-family-base);
+}
+.dateCreated {
+    display: flex;
+    color: #475569;
+    font-size: 13px; /* Nhỏ hơn một chút so với category để tạo sự khác biệt */
+    font-weight: italic;
+
+}
+.categoryContainer {
+    display: flex; /* Sử dụng Flexbox */
+    align-items: center; /* Căn chỉnh các phần tử con theo chiều cao giữa */
+    font-size: 15px; /* Cỡ chữ */
+    color: black; /* Màu chữ */
+    padding-top: 10px; /* Khoảng cách phía trên */
+    margin-bottom: 10px; /* Khoảng cách phía dưới */
+    font-family: var(--font-header); /* Font family */
+    font-family: var(--font-family-base); /* Font family */
+    margin-right: 0;
+}
+
+.categoryContainer a {
+    text-decoration: none; /* Loại bỏ gạch chân của liên kết */
+    display: inline-flex; /* Sử dụng inline-flex để liên kết và biểu tượng ở cùng một dòng */
+    align-items: center; /* Căn chỉnh các phần tử con theo chiều cao giữa */
+}
+
+.categoryContainer a:hover {
+    cursor: pointer;
+}
+
+.shareIcons {
+  display: flex;
+  gap: 4px; /* Khoảng cách giữa các biểu tượng */
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.shareIcons a {
+  font-size: 15px; /* Kích thước biểu tượng */
+  color: #555; /* Màu biểu tượng */
+  text-decoration: none; /* Loại bỏ gạch chân */
+  transition: color 0.3s; /* Hiệu ứng màu khi hover */
+}
+
+.shareIcons a:hover {
+  color: #000; /* Màu khi hover */
+  cursor: pointer; /* Con trỏ chuột khi hover */
+  transform: translateY(-2px);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.shareIcons .icon {
+  width: 22px; /* Kích thước biểu tượng */
+  height: 22px; /* Kích thước biểu tượng */
+}
+.introContainer {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    position: relative;
+    margin: 0 0 20px 0;
+}
+
+.introQuote {
+    margin: 0;
+    padding: 0.5em 10px;
+    border-radius: 0 5px 5px 0;
+    position: relative;
+    padding-left: 70px; /* Đảm bảo có đủ không gian cho icon */
+    background-color: #e8f4f8;
+    border-left: 4px solid #2d96bd;
+    color: black;
+    list-style-type: none;
+    font-family: var(--font-family-base);
+    font-size: 14px;
+}
+
+.introQuote::before {
+    font-family: "Font Awesome 5 Free"; /* Sử dụng font-family của Font Awesome */
+    font-weight: 900; /* Font Awesome yêu cầu font-weight 900 cho Solid icons */
+    position: absolute;
+    left: 10px; /* Điều chỉnh vị trí phù hợp */
+    top: 50%; /* Đặt icon ở giữa chiều cao của blockquote */
+    transform: translateY(-50%); /* Cân bằng icon ở giữa theo chiều dọc */
+    font-size: 1.2em; /* Điều chỉnh kích thước của icon */
+    display: none; /* Xóa bullet icon mặc định */
+    content: "";
+}
+
+.introCent {
+    position: absolute;
+    left: 15px;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center;
+}
+
 /* Tags and Time Estimate Block */
 .tagsAndTimeContainer {
     display: flex;
@@ -93,7 +179,7 @@
 .postTags {
     display: flex;
     align-items: center;
-    font-size: 0.85rem; /* Điều chỉnh kích thước chữ cho phù hợp */
+    font-size: 0.75rem; /* Điều chỉnh kích thước chữ cho phù hợp */
     font-family: var(--post-list-tag); /* Thay bằng font thực tế của bạn */
     flex: 1; /* Linh hoạt chia sẻ không gian với phần thời gian đọc */
     flex-wrap: nowrap; /* Không cho phép các tag xuống hàng */
@@ -101,18 +187,19 @@
 }
 
 .tag {
-    background-color: #333; /* Nền tối để dễ nhìn */
-    color: #fff; /* Chữ màu trắng để tạo sự tương phản */
-    padding: 3px 7px; /* Đệm bên trong mỗi tag */
-    border-radius: 5px; /* Viền tròn cho thẩm mỹ */
+    justify-content: center;
+    background-color: #f8fafc;
+    color: #475569;
+    padding: 2px 7px; /* Đệm bên trong mỗi tag */
+    border-radius: 8px; /* Viền tròn cho thẩm mỹ */
     margin: 0 5px 5px 0; /* Khoảng cách giữa các tag */
     transition: transform 0.3s ease, background-color 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà khi hover */
     cursor: pointer; /* Hiển thị con trỏ như một dấu hiệu có thể tương tác */
+    border: 1px solid #ccc;
 }
 
 .tag:hover {
-    transform: scale(1.02); /* Phóng to tag khi hover */
-    background-color: #555; /* Nền tối hơn khi hover */
+    transform: translateY(-2px);
 }
 
 .emojiIcon {
@@ -120,6 +207,7 @@
     margin-right: 5px;
     display: inline-block;
     vertical-align: middle; /* Căn giữa icon với văn bản xung quanh */
+    padding-bottom: 2px;
 }
 
 .readingTime {
@@ -133,39 +221,128 @@
 /* Content container styles */
 .contentContainer {
     border-top: 1px solid #e1e1e1;
-    padding-top: 20px;
+    padding-top: 0;
     color: black; /* gray-400 */
     font-family: var(--font-family-base);
-    line-height: 2.0;
+    line-height: 2.2;
     padding-bottom: 20px;
     font-size: 13.5px;
 }
 .contentContainer h1 {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px 0;
+}
+.contentContainer h2 {
     font-size: 25px;
+    font-weight: bold;
+    padding: 0 0 0 10px; /* Thêm khoảng đệm để tạo khoảng cách giữa nội dung và viền */
+    margin: 20px 0; /* Thêm khoảng cách trên dưới */
+    background: linear-gradient(to right, #e3f2fd, #ffffff); /* Nền gradient từ xanh nhạt đến trắng */
+    border-left: 3px solid #2196F3; /* Viền trái màu xanh */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho hộp */
+    border-radius: 3px; /* Bo góc hộp */
+}
+.contentContainer h3 {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 0;
+}
+.contentContainer h4 {
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+.contentContainer table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.contentContainer th, .contentContainer td {
+    padding: 8px;
+    text-align: left;
+
+}
+
+/* Applying a thicker bottom border to the header row */
+.contentContainer th {
+    background-color: #f2f2f2;
+}
+
+/* Regular 1px bottom border for table cells */
+.contentContainer td {
+    border-bottom: 1px solid #ddd;
+}
+
+.contentContainer a {
+    text-decoration: none;
+    color: black;
+}
+
+.contentContainer code {
+    background-color: #eee;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.contentContainer strong {
     font-weight: bold;
 }
 
-.contentContainer blockquote {
-    padding: 0.5em 10px;
-    border-radius: 5px;
-    position: relative;
-    padding-left: 40px; /* Đảm bảo có đủ không gian cho icon */
-    background-color: #ccffcc;
-    border-left: 4px solid #70db70;
-    color: black;
-
+.contentContainer tr:last-child th,
+.contentContainer tr:last-child td {
+    border-bottom: none;
 }
 
-.contentContainer blockquote::before {
-    content: "\f10d"; /* Mã Unicode của icon fas fa-quote-left */
-    font-family: "Font Awesome 5 Free"; /* Sử dụng font-family của Font Awesome */
-    font-weight: 900; /* Font Awesome yêu cầu font-weight 900 cho Solid icons */
+/* Unordered list */
+.contentContainer ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 15px;
+}
+
+.contentContainer ul li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+.contentContainer ul li::before {
+    content: '';
     position: absolute;
-    left: 10px; /* Điều chỉnh vị trí phù hợp */
-    top: 50%; /* Đặt icon ở giữa chiều cao của blockquote */
-    transform: translateY(-50%); /* Cân bằng icon ở giữa theo chiều dọc */
-    font-size: 1.2em; /* Điều chỉnh kích thước của icon */
-    color: #70db70; /* Màu của icon, bạn có thể thay đổi tùy ý */
+    left: 0;
+    top: 12px;
+    height: 8px;
+    width: 8px;
+    background-color: lightgray;
+    border-radius: 50%;
+}
+
+/* Ordered list */
+
+.contentContainer ol {
+    counter-reset: item;
+    padding-left: 0;
+    margin-left: 15px;
+}
+
+.contentContainer ol li {
+    counter-increment: item;
+    list-style-type: none;
+    position: relative;
+    padding-left: 20px;
+}
+
+.contentContainer ol li:before {
+    content: counter(item) ". "; 
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #333;
 }
 
 /* Section Comment */

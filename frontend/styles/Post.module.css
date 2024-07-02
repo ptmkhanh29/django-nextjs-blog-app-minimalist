@@ -26,7 +26,6 @@
 }
 
 .link:hover {
-    
     text-decoration: underline; /* Removes underline on hover */
     color: darkgreen; /* Darkens the color on hover */
 }

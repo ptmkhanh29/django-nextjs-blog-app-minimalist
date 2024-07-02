@@ -16,6 +16,12 @@ class ArticleForm(forms.ModelForm):
             'content': forms.Textarea(attrs={
                 'style': 'width: 100%; height: 500px; font-family: "Courier New", Courier, monospace; background-color: white; border: 1px solid #ccc;'
             }),
+            'title': forms.Textarea(attrs={
+                'style': 'width: 100%; height: 40px; font-family: "Courier New", Courier, monospace; background-color: white; border: 1px solid #ccc;'
+            }),
+            'slug': forms.Textarea(attrs={
+                'style': 'width: 100%; height: 20px; font-family: "Courier New", Courier, monospace; background-color: white; border: 1px solid #ccc;'
+            })
         }
 
 class ArticleAdmin(admin.ModelAdmin):

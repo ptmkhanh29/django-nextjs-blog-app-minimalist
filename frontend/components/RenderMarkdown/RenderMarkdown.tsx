@@ -12,6 +12,8 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import remarkGfm from 'remark-gfm';
 import rehypeSanitize from 'rehype-sanitize';
 import { BlockQuote } from './BlockQuote';
+import { BlockMath } from './BlockMath';
+import { BlockImage } from './BlockImage';
 
 interface RenderMarkdown {
   content: string;
@@ -20,37 +22,40 @@ interface RenderMarkdown {
 const CodeBlock = ({ language, value, fileName }) => {
   const [copy, setCopy] = useState(false);
   return (
-    <div className="w-full min-w-[25rem] bg-[#f5f5f5] rounded-md overflow-hidden shadow-lg">
-      <div className="flex justify-between px-4 text-black text-xs items-center align-items-center">
-          <p className="text-sm">{fileName}</p>
-          {copy ? (
-            <button className="py-1 inline-flex items-center gap-1">
-              <span className="text-base mt-1">
-                <img src="/assets/icons/checkmark-svgrepo-com.svg" alt="Copy code" className={styles.iconCheckMark} />
-              </span>
-              Copied!
-            </button>
-          ) : (
-            <button className="py-1 inline-flex items-center gap-1"
-              onClick={() => {
-                navigator.clipboard.writeText(value);
-                setCopy(true);
-                setTimeout(() => setCopy(false), 3000);
-              }}>
-              <span className="text-base mt-1">
-                <img src="/assets/icons/clipboard-outline.svg" alt="Copy code" className={styles.iconClipBoard} />
-              </span>
-              Copy
-            </button>
-          )}
+    <div className={styles.containerBlockCode}>
+      <div className={styles.flexContainer}>
+        <span className={`${styles.dot} ${styles['dot-yellow']}`} style={{ marginLeft: '0.2rem' }}></span>
+        <span className={`${styles.dot} ${styles['dot-red']}`} style={{ marginLeft: '1.3rem' }}></span>
+        <span className={`${styles.dot} ${styles['dot-green']}`} style={{ marginLeft: '2.4rem' }}></span>
+        <p className={styles.fileName}>{fileName}</p>
+        {copy ? (
+              <button className={styles.buttonCopy}>
+                <span className="text-base mt-1">
+                  <img src="/assets/icons/checkmark-svgrepo-com.svg" alt="Copy code" className={styles.iconCheckMark} />
+                </span>
+              </button>
+            ) : (
+              <button className={styles.buttonCopy}
+                onClick={() => {
+                  navigator.clipboard.writeText(value);
+                  setCopy(true);
+                  setTimeout(() => setCopy(false), 3000);
+                }}>
+                <span className="text-base mt-1">
+                  <img src="/assets/icons/clipboard-outline.svg" alt="Copy code" className={styles.iconClipBoard} />
+                </span>
+
+              </button>
+            )}
       </div>
-      <div className={styles.divScroll} style={{ maxWidth: '100%', maxHeight: '300px', overflowX: 'auto', overflowY: 'auto' }}>
+      <div className={styles.divScroll} style={{ maxWidth: '100%', maxHeight: '500px', overflowX: 'auto', overflowY: 'auto' }}>
           <SyntaxHighlighter
             language={language}
             style={oneLight}
             customStyle={{
               margin: '0',
-              borderRadius: '0.5rem',
+              borderBottomLeftRadius: '0.5rem',
+              borderBottomRightRadius: '0.5rem',
               backgroundColor: 'white'
             }}
             showLineNumbers={true}
@@ -67,7 +72,6 @@ const CodeBlock = ({ language, value, fileName }) => {
 export const RenderMarkdown: React.FC<RenderMarkdown> = ({ content }) => {
   const components = {
     code({node, inline, className, children, ...props}) {
-      console.log("content: ", content);
       const match = /language-(\w+)/.exec(className || '')
       let fileName = '';
       if (node.position && node.position.start) {
@@ -86,6 +90,12 @@ export const RenderMarkdown: React.FC<RenderMarkdown> = ({ content }) => {
           {children}
         </code>
       );
+    },
+    blockquote({ children }) {
+      return <BlockQuote>{children}</BlockQuote>;
+    },
+    img({ node, inline, className, children, ...props }) {
+        return <BlockImage src={props.src} alt={props.alt} />
     }
   };
 

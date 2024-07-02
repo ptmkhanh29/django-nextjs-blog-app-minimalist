@@ -48,6 +48,11 @@ def vietnamese_slugify(value):
     value = slugify(value)
     return value
 
+def find_markdown_images(text):
+    pattern = r"!\[(.*?)\]\((.*?)\)"
+    matches = re.findall(pattern, text)
+    filtered_matches = [match for match in matches if not match[1].startswith(('http:', 'https:'))]
+    return filtered_matches
 
 class Article(models.Model):
     class Status(models.TextChoices):
@@ -95,9 +100,15 @@ class Article(models.Model):
         
         if self.image:
             local_path = self.image.path
-            print(f"local_path = {local_path}")
             full_path = os.path.join('backend/media/', local_path)
-            print(f"full_path = {full_path}")
             file_name = f"{self.slug}_{self.image.name}"
             self.image_url = upload_image_to_firebase(self.title, full_path, os.path.basename(full_path))
             super().save(update_fields=['image_url'])
+
+        if self.content:
+            image_tuples = find_markdown_images(self.content)
+            for alt_text, image_path in image_tuples:
+                url_image = upload_image_to_firebase(self.title, image_path, os.path.basename(image_path))
+                pattern = r'\!\[' + re.escape(alt_text) + r'\]\(' + re.escape(image_path) + r'\)'
+                self.content = re.sub(pattern, f"![{alt_text}]({url_image})", self.content)
+            super().save(update_fields=['content'])

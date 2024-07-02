@@ -1,0 +1,24 @@
+/* ImageWithCaption.module.css */
+.containerImage {
+  text-align: center;
+}
+
+.imageBlock {
+  display: inline-block;
+  position: relative;
+  margin-top: 10px;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.caption {
+  font-style: italic;
+  font-size: 12px;
+  padding: 5px;
+  color: #666; /* Đặt màu cho caption */
+  font-family: var(--font-caption-post);
+}

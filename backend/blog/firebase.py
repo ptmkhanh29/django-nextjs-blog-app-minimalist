@@ -16,5 +16,9 @@ storage = firebase.storage()
 
 def upload_image_to_firebase(article, local_path, file_name):
     path_on_cloud = f"{article}/{file_name}"
-    storage.child(path_on_cloud).put(local_path)
-    return storage.child(path_on_cloud).get_url(None)
+    try:
+        url = storage.child(path_on_cloud).get_url(None)
+        return url
+    except:
+        storage.child(path_on_cloud).put(local_path)
+        return storage.child(path_on_cloud).get_url(None)

@@ -29,6 +29,28 @@
 
   /* Comment */
   --font-leave-comment: "Source Sans Pro", "Microsoft Yahei", sans-serif;
+
+  /* Color Block Quote */
+  --color-note-bg: #e0f2ff;
+  --color-note-border: #69AADB;
+
+  --color-tip-bg: #ffffcc;
+  --color-tip-border: #ffd700;
+
+  --color-information-bg: #ccffcc;
+  --color-information-border: #70db70;
+
+  --color-warning-bg: #fff5cc;
+  --color-warning-border: #ffcc00;
+
+  --color-caution-bg: #ffdacc;
+  --color-caution-border: #cf222e;
+
+  --color-default-bg: #f0f0f0;
+  --color-default-border: #cccccc;
+
+  /*Caption Image for Post */
+  --font-caption-post: "Source Sans Pro", "Microsoft Yahei", sans-serif;
 }
 
 /*
@@ -161,12 +183,12 @@
 @media (max-width: 768px) {
     .header {
         width: 100%; /* Cho main-content chiếm 100% chiều rộng màn hình */
-        padding-left: 25px;
+        padding-left: 10px;
     }
 }
 @media (max-width: 480px) {
     .header {
         width: 100%; /* Cho main-content chiếm 100% chiều rộng màn hình */
-        padding-left: 25px;
+        padding-left: 10px;
     }
 }
